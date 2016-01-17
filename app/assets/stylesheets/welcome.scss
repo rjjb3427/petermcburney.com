@@ -11,8 +11,16 @@ body{
   overflow-y: hidden;
 }
 
-.small-padding{
+/* PADDING */
+.nav-padding{
   padding: 15px 70px;
+}
+.small-padding{
+}
+
+/* MARGIN */
+.no-margin{
+  margin: 0px;
 }
 
 .border-small-black{
@@ -28,6 +36,22 @@ header{
 nav{
   width: 100%;
   background-color: #999999;
+}
+
+.modal{
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  height: auto;
+  width: 200px;
+  top: 100px;
+  left: 100px;
+}
+.modal-header{
+
+}
+.modal-text{
+
 }
 
 #background{
