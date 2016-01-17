@@ -18,16 +18,13 @@ body{
 .lora{font-family: 'Lora', serif;}
 
 /* PADDING */
-.nav-padding{
-  padding: 15px 70px;
-}.small-padding{
-
-}
+.nav-padding{padding: 15px 70px;}
+.small-padding{}
+.medium-padding{}
+.large-padding{}
 
 /* MARGIN */
-.no-margin{
-  margin: 0px;
-}
+.no-margin{margin: 0px;}
 
 .border-small-black{
   border: 1px solid #000000;
@@ -35,6 +32,9 @@ body{
 }
 
 header{
+  background-color: #f1f1f1;
+  color:#333333;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
   font-size: 2em;
 }
 
@@ -65,8 +65,9 @@ nav{
   bottom: 20px;
   width: 400px;
   height: auto;
-}
-.signature-image{
+}.signature-image{
   width: 400px;
   height: auto;
+}.signature-text{
+  text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
 }
