@@ -11,11 +11,17 @@ body{
   overflow-y: hidden;
 }
 
+/* COLOURS */
+.white{color:#ffffff}
+
+/* FONTS */
+.lora{font-family: 'Lora', serif;}
+
 /* PADDING */
 .nav-padding{
   padding: 15px 70px;
-}
-.small-padding{
+}.small-padding{
+
 }
 
 /* MARGIN */
@@ -30,12 +36,11 @@ body{
 
 header{
   font-size: 2em;
-  font-family: 'Lora', serif;
 }
 
 nav{
   width: 100%;
-  background-color: #999999;
+  background-color: #cccccc;
 }
 
 .modal{
@@ -47,12 +52,8 @@ nav{
   top: 100px;
   left: 100px;
 }
-.modal-header{
-
-}
-.modal-text{
-
-}
+.modal-header{}
+.modal-text{}
 
 #background{
   width: 100vw;
@@ -62,6 +63,10 @@ nav{
   position: absolute;
   right: 20px;
   bottom: 20px;
+  width: 400px;
+  height: auto;
+}
+.signature-image{
   width: 400px;
   height: auto;
 }
