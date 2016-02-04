@@ -80,13 +80,7 @@ nav{
   transform: translateY(-50%);
 }
 
-/*Filter styles*/
-.saturate {-webkit-filter: saturate(3);}
-.grayscale:hover{-webkit-filter: grayscale(100%);transition: 0.5s ease;}
-.contrast {-webkit-filter: contrast(160%);}
-.brightness {-webkit-filter: brightness(0.25);}
-.blur:hover {-webkit-filter: blur(3px);transition: 0.5s ease;}
-.invert {-webkit-filter: invert(100%);}
-.sepia {-webkit-filter: sepia(100%);}
-.huerotate {-webkit-filter: hue-rotate(180deg);}
-.opacity:hover{-webkit-filter: opacity(50%);transition: 0.5s ease;}
+/* Filter Styles */
+.grayscale:hover{-webkit-filter: grayscale(100%);filter: grayscale(100%);transition: 0.5s ease;}
+.blur:hover {-webkit-filter: blur(3px);filter: blur(5px);transition: 0.5s ease;}
+.opacity:hover{-webkit-filter: opacity(50%);filter: opacity(25%);transition: 0.5s ease;}
