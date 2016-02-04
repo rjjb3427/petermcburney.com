@@ -1,9 +1,12 @@
-$(document).on('mouseover','.art',function(){
-  $(this).css({"border":"2px solid blue"});
+$(".art" ).hover(function() {
+  var x = $(this).attr('id').slice(-1);
+  $('#art-text'+x).fadeIn().css({"display":"block"});
 });
-$(document).on('mouseout','.art',function(){
-  $(this).css({"border":"1px solid black"});
+/*
+$(document).on('mouseout','.art',function(e){
+  var x = $(this).attr('id').slice(-1);
+  $('#art-text'+x).css({"display":"none"});
 });
 $(document).on('click','.art',function(){
   $(this).css({"border":"2px solid red"});
-});
+});*/
