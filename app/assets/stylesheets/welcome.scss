@@ -1,73 +1,92 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-@import url(https://fonts.googleapis.com/css?family=Lora|Lato:300,100);
+@import url(https://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
 
 body{
-  margin: 0px;
-  font-family: 'Lato', sans-serif;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  margin:0px;
+  background-color: #fff;
+  border-top: 5px solid #4f514e;
+  color: #3a3b39;
+  font-family: 'IM Fell French Canon', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* COLOURS */
-.white{color:#ffffff}
+footer{color:white;height:40px;}
 
-/* FONTS */
-.lora{font-family: 'Lora', serif;}
-
-/* PADDING */
-.nav-padding{padding: 15px 70px;}
-.small-padding{}
-.medium-padding{}
-.large-padding{}
-
-/* MARGIN */
-.no-margin{margin: 0px;}
-
-.border-small-black{
-  border: 1px solid #000000;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-header{
-  background-color: #f1f1f1;
-  color:#333333;
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-  font-size: 2em;
+.inner{
+  margin: 0px 5vw;
+  width:90vw;
 }
 
 nav{
-  width: 100%;
-  background-color: #cccccc;
-}
-
-.modal{
-  border-radius: 2px;
-  background-color: #ffffff;
-  position: absolute;
-  height: auto;
-  width: 200px;
-  top: 100px;
-  left: 100px;
-}
-.modal-header{}
-.modal-text{}
-
-#background{
   width: 100vw;
+  height: 60px;
+  color: #ffffff;
 }
 
-#signature{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 400px;
-  height: auto;
-}.signature-image{
-  width: 400px;
-  height: auto;
-}.signature-text{
-  text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
+.gradient-dark{
+  background: #232323; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#191919,#333333); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#191919,#333333); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#191919,#333333); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#191919,#333333); /* Standard syntax */
 }
+
+/* COLOURS */
+.white{color:#ffffff;}
+
+/* POSITIONING */
+.position-relative{position: relative;}
+.position-absolute{position: absolute;}
+
+/* MARGIN & PADDING */
+.margin-none{margin:0px;}
+.margin-small{margin:10px;}
+.margin-right-large{margin-right:30px;}
+.margin-horizontal-small{margin:10px;}
+.margin-horizontal-large{margin: 0px 30px;}
+
+.container{
+  background-color: #eeeeee;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+.art{
+  background: #000000;
+  overflow: hidden;
+  float:left;
+  width: 250px;
+  height: 200px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5)
+}
+.art-image{
+  width:100%;
+  clip: rect(0px,150px,100px,0px)
+}
+.art-text{
+  width:250px;
+  display: none;
+  top:200px;
+  z-index: 2;
+}
+
+.vertical-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*Filter styles*/
+.saturate {-webkit-filter: saturate(3);}
+.grayscale:hover{-webkit-filter: grayscale(100%);transition: 0.5s ease;}
+.contrast {-webkit-filter: contrast(160%);}
+.brightness {-webkit-filter: brightness(0.25);}
+.blur:hover {-webkit-filter: blur(3px);transition: 0.5s ease;}
+.invert {-webkit-filter: invert(100%);}
+.sepia {-webkit-filter: sepia(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);}
+.opacity:hover{-webkit-filter: opacity(50%);transition: 0.5s ease;}
