@@ -25,6 +25,8 @@ body{
 /* COLOURS */
 .col-white{color:#ffffff;}
 
+.float-left{float:left;}
+
 /* TEXT SHADOWS */
 .shad-black{
   text-shadow:
@@ -83,11 +85,6 @@ body{
   height: 100px;
   width:100vw;
   position: absolute;
-}
-
-.borderTop, .sub-header, .borderBottom{
-  z-index: 3;  
-  top: -35px;
 }
 
 .borderTop{
