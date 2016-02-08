@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  
+
+  resources :artwork
+
   root 'welcome#index'
+
+  # resources :articles do
+  #   resources :comments, :paragraphs, :tags
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
