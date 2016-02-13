@@ -2,13 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-footer{color:white;height:40px;}
+body{
+  letter-spacing: 2px !important;
+  background-color: #eeeeee !important;
+}
 
+footer{
+  color:white;
+  height:70px;
+}
 
 .artwork-wrapper{
-  width:95vw;
-  padding: 0 2.5vw;
-  height:auto;
+  left:30px;
+  width: 80vw;
+  margin: 0 auto;
   overflow: auto;
 }
 
@@ -24,11 +31,25 @@ nav{
 }
 
 .gradient-dark{
-  background: #232323; /* For browsers that do not support gradients */
+  background: #000000; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#191919,#333333); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#191919,#333333); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#191919,#333333); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#191919,#333333); /* Standard syntax */
+}
+.gradient-to-black{
+  background: #232323; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#333333,#000000); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#333333,#000000); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#333333,#000000); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#333333,#000000); /* Standard syntax */
+}
+.gradient-from-black{
+  background: #000000; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#000000,#333333); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#000000,#333333); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#000000,#333333); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#000000,#333333); /* Standard syntax */
 }
 
 .container{
