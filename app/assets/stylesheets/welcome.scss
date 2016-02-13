@@ -1,12 +1,12 @@
 // @import url(https://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
 // @import url(https://fonts.googleapis.com/css?family=Alegreya:400,700,900);
 // @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700);
-// @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
-@import url(https://fonts.googleapis.com/css?family=Martel:400,200,300);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+// @import url(https://fonts.googleapis.com/css?family=Martel:400,200,300);
 
 
-$serif-font: 'Martel', serif;
-$sans-serif-font: 'Helvetica', sans-serif;
+$serif-font: 'Playfair Display', serif;
+$sans-serif-font: 'Helvetica', sans-serif-font;
 
 body{
   margin:0px;
@@ -16,6 +16,7 @@ body{
   font-size: 18px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+  font-family: serif;
   overflow-x: hidden;
 }
 
@@ -55,7 +56,6 @@ body{
 .center-text{width:100vw;text-align:center;}
 
 .header{
-  font-family: 'Martel', serif;
   letter-spacing: 5px !important;
   font-size: 120px;
   z-index: 3;
