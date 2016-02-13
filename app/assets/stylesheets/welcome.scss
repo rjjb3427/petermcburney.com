@@ -4,16 +4,18 @@
 // @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Martel:400,200,300);
 
+
+$serif-font: 'Martel', serif;
+$sans-serif-font: 'Helvetica', sans-serif;
+
 body{
   margin:0px;
   background-color: #fff;
   border-top: 5px solid #4f514e;
   color: #3a3b39;
-  font-family: 'Martel', serif;
   font-size: 18px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
@@ -53,6 +55,7 @@ body{
 .center-text{width:100vw;text-align:center;}
 
 .header{
+  font-family: 'Martel', serif;
   letter-spacing: 5px !important;
   font-size: 120px;
   z-index: 3;
