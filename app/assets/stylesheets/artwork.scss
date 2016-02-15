@@ -104,6 +104,7 @@ nav{
   overflow: auto;
 }
 #x{
+  opacity: 0.8;
   cursor: pointer;
   position: absolute;
   top: 15px;
@@ -111,6 +112,7 @@ nav{
   width: 30px;
   height: auto;
 }
+#x:hover{opacity: 1}
 #arrow-left,#arrow-right{
   position: absolute;
   cursor: pointer;
@@ -143,17 +145,32 @@ nav{
   width:100%;
   clip: rect(0px,150px,100px,0px)
 }
-.art-text{
-  display:none;
-  position: relative;
-  width:250px;
-  top:-200px;
+#art-text{
+  display: none;
+  position:absolute;
+  top:0px;
+  width: 100%;
+  height: 100%;
   z-index: 2;
+}
+#art-text:hover{
+  background: rgba(0,0,0,0.5);
+  transition: 0.5s ease;
 }
 .vertical-center{
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+#bottom-img{
+  -webkit-filter: opacity(50%);
+  filter: opacity(25%);
+  z-index: 0;
+  transition: 0.5s ease;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
 }
 
 /* Filter Styles */
