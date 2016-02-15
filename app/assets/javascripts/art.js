@@ -1,6 +1,5 @@
 
 $(document).on('mouseout','.art',function(e){
-  console.log("test");
 });
 $(document).on('click','#blur',function(e){
   $('#img-active').css({
@@ -20,6 +19,7 @@ $(document).on('click','.art',function(e){
       "display": "none"
     });
   }else{
+    $("#img-active").attr('src', $(this).find("img").attr('src'));
     $('#img-active').css({
       "display": "block"
     });
