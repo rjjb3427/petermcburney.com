@@ -28,6 +28,3 @@ $(document).on('click','.art',function(e){
     });
   }
 });
-// $(document).on('click','.art',function(){
-//   $(this).css({"border":"2px solid red"});
-// });
