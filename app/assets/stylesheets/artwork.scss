@@ -78,8 +78,9 @@ nav{
 
 
 #blur{
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   z-index: 9;
+  top: 0px;
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -88,7 +89,7 @@ nav{
 #img-active{
   position: relative;
   display: none;
-  max-width: 600px;
+  max-height: 350px;
   top: 40px;
   z-index: 10;
   height:auto;
@@ -101,6 +102,28 @@ nav{
   margin: 0 auto;
   padding-top: 30px;
   overflow: auto;
+}
+#x{
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 5vw;
+  width: 30px;
+  height: auto;
+}
+#arrow-left,#arrow-right{
+  position: absolute;
+  cursor: pointer;
+  width: 80px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#arrow-left{
+  left: 20px;
+}
+#arrow-right{
+  right: 20px;
 }
 
 .art{
