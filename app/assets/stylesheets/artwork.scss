@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  letter-spacing: 2px !important;
   background-color: #eeeeee !important;
 }
 
@@ -16,6 +15,10 @@ footer{
   width: calc(100% + 30px);
   margin-left:-30px !important;
   overflow: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -53,14 +56,48 @@ nav{
   background: -moz-linear-gradient(#000000,#333333); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#000000,#333333); /* Standard syntax */
 }
+.gradient-to-and-from-black{
+  background-color:#000000;
+  background-image:-moz-linear-gradient(top, #000000 0%, #222222 50%,#000000 100%);
+  background-image:linear-gradient(top, #000000 0%, #222222 50%,#000000 100%);
+  background-image:-webkit-linear-gradient(top, #000000 0%, #222222 50%,#000000 100%);
+  background-image:-o-linear-gradient(top, #000000 0%, #222222 50%,#000000 100%);
+  background-image:-ms-linear-gradient(top, #000000 0%, #222222 50%,#000000 100%);
+  background-image:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#000000), color-stop(50%,#222222),color-stop(100%,#000000));
+}
 
 .container{
   background-color: #eeeeee;
   width: 100vw;
   overflow: auto;
   padding-bottom: 10px;
+  p{
+    letter-spacing: 1px;
+  }
 }
+
+
+#blur{
+  background: rgba(0,0,0,0.5);
+  z-index: 9;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+#img-active{
+  position: fixed;
+  display: none;
+  max-width: 600px;
+  top: 40px;
+  z-index: 10;
+  height:auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .art{
+  cursor: pointer;
   position: relative;
   top: 0px;
   background: #000000;
