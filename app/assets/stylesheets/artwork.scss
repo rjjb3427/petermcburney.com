@@ -86,7 +86,7 @@ nav{
   display: none;
 }
 #img-active{
-  position: fixed;
+  position: relative;
   display: none;
   max-width: 600px;
   top: 40px;
@@ -94,6 +94,13 @@ nav{
   height:auto;
   left: 50%;
   transform: translateX(-50%);
+}
+.text-active{
+  color: #ffffff !important;
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  overflow: auto;
 }
 
 .art{
