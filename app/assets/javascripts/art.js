@@ -1,5 +1,9 @@
 
+$(document).on('mouseover','.art',function(e){
+  $('#art-text').css({"display":"block"});
+});
 $(document).on('mouseout','.art',function(e){
+  $('#art-text').css({"display":"none"});
 });
 $(document).on('click','#blur',function(e){
   $('#img-active').css({
