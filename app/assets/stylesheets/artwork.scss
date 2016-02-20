@@ -76,7 +76,6 @@ nav{
   }
 }
 
-
 #blur{
   background: rgba(0,0,0,0.7);
   z-index: 9;
@@ -172,3 +171,17 @@ nav{
 
 /* Filter Styles */
 .opacity:hover{-webkit-filter: opacity(50%);filter: opacity(25%);transition: 0.5s ease;}
+
+
+/* ARTWORK NEW */
+
+button{
+  font-size: 16px;
+  width: 148px;
+  height: 47px;
+  background-color: #eeeeee;
+  border: 1px solid #333333;
+  color: #333333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1.0)
+}

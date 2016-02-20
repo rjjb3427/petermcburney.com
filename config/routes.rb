@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :artwork
+  resources :photos
 
   root 'welcome#index'
 
