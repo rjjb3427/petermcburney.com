@@ -19,6 +19,24 @@ $(document).on('click','.art',function(e){
   $('#blur').css({"display": "block"});
 });
 
+/* KEYDOWN FUNCTIONALTY */
+$(document).keydown(function(event){
+  if($('#blur').css("display") == "block"){
+    switch(event.keyCode){
+      case 37:
+        id -= 1;
+        if(id == -1){id = numArt - 1;}
+        $("#img-active").attr('src', $('#art' + id).find("img").attr('src'));
+        break;
+      case 39:
+        id += 1;
+        if(id == numArt){id = 0;}
+        $("#img-active").attr('src', $('#art' + id).find("img").attr('src'));
+        break;
+    }
+  }
+});
+
 /* ARROW FUNCTIONALITY */
 $(document).on('click','#arrow-right',function(e){
   id += 1;
