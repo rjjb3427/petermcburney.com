@@ -8,11 +8,14 @@ $(document).on('mouseout','.art',function(e){
   $(this).find('#art-text').css({"display":"none"});
 });
 $(document).on('click','#x',function(e){
+
+  $('body').css({"overflow":"auto"});
   $('#img-active').css({"display": "none"});
   $('#blur').css({"display": "none"});
 });
 
 $(document).on('click','.art',function(e){
+  $('body').css({"overflow":"hidden"});
   id = parseInt($(this).attr('id').slice(3));
   $("#img-active").attr('src', $(this).find("img").attr('src'));
   $('#img-active').css({"display": "block"});
