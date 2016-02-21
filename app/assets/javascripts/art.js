@@ -8,7 +8,6 @@ $(document).on('mouseout','.art',function(e){
   $(this).find('#art-text').css({"display":"none"});
 });
 $(document).on('click','#x',function(e){
-
   $('body').css({"overflow":"auto"});
   $('#img-active').css({"display": "none"});
   $('#blur').css({"display": "none"});
@@ -26,6 +25,11 @@ $(document).on('click','.art',function(e){
 $(document).keydown(function(event){
   if($('#blur').css("display") == "block"){
     switch(event.keyCode){
+      case 27:
+        $('body').css({"overflow":"auto"});
+        $('#img-active').css({"display": "none"});
+        $('#blur').css({"display": "none"});
+        break;
       case 37:
         id -= 1;
         if(id == -1){id = numArt - 1;}
