@@ -1,7 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700|Crimson+Text:400,600,400italic,600italic|Cardo:400,400italic,700);
 
-$serif-font: 'Playfair Display', serif;
+$serif-font: 'Crimson Text', serif;
 $sans-serif-font: 'Helvetica', sans-serif-font;
+
+
+$black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
 
 body{
   margin:0px;
@@ -11,11 +14,44 @@ body{
   font-size: 18px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
-  // // font-family: 'Libre Baskerville', serif;
-  font-family: 'Crimson Text', serif;
-  // font-family: 'Cardo', serif;
   overflow-x: hidden;
 }
+
+#landing {
+  color: white;
+  font-style: $serif-font;
+
+  nav {
+    font-size: 16px;
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    a {
+      cursor: pointer;
+      float: left;
+      margin-left: 10px;
+
+      &:hover {
+        color: #eeeeee;
+        text-shadow: $black-text-shadow;
+      }
+    }
+  }
+
+  h1 {
+    letter-spacing: 5px !important;
+    font-size: 120px;
+    z-index: 3;
+    font-weight: 200;
+  }
+  h2 {
+
+  }
+}
+
+.center{margin: 0 auto;}
 
 /* COLOURS */
 .col-white{color:#ffffff;}
@@ -53,12 +89,6 @@ body{
 
 .center-text{width:100vw;text-align:center;}
 
-.header{
-  letter-spacing: 5px !important;
-  font-size: 120px;
-  z-index: 3;
-  font-weight: 200;
-}
 .header-desc{
   font-size: 80px;
   z-index: 3;
@@ -68,13 +98,12 @@ body{
   font-size: 60px;
   letter-spacing: 2px;
 }
-.bg, .crayons{
+.bg{
   min-width: 1100px;
   width: 100vw;
   left:0px;
 }
 .bg{z-index: 1;bottom:0px;}
-.crayons{z-index: 2;bottom:-150px;}
 
 .landing-content{
   bottom:-250px;
@@ -95,13 +124,13 @@ body{
   background: url('edge_down.png') repeat-x;
 }
 
-@media only screen and (max-width: 1100px){ .bg, .crayons{left: -0px;}}
-@media only screen and (max-width: 1050px){ .bg, .crayons{left: -50px;}}
-@media only screen and (max-width: 1000px){ .bg, .crayons{left: -100px;}}
-@media only screen and (max-width: 950px){ .bg, .crayons{left: -150px;}}
-@media only screen and (max-width: 900px){ .bg, .crayons{left: -200px;}}
-@media only screen and (max-width: 850px){ .bg, .crayons{left: -250px;}}
-@media only screen and (max-width: 800px){ .bg, .crayons{left: -300px;}}
-@media only screen and (max-width: 750px){ .bg, .crayons{left: -350px;}}
-@media only screen and (max-width: 700px){ .bg, .crayons{left: -400px;}}
-@media only screen and (max-width: 650px){ .bg, .crayons{left: -450px;}}
+// @media only screen and (max-width: 1100px){ .bg, .crayons{left: -0px;}}
+// @media only screen and (max-width: 1050px){ .bg, .crayons{left: -50px;}}
+// @media only screen and (max-width: 1000px){ .bg, .crayons{left: -100px;}}
+// @media only screen and (max-width: 950px){ .bg, .crayons{left: -150px;}}
+// @media only screen and (max-width: 900px){ .bg, .crayons{left: -200px;}}
+// @media only screen and (max-width: 850px){ .bg, .crayons{left: -250px;}}
+// @media only screen and (max-width: 800px){ .bg, .crayons{left: -300px;}}
+// @media only screen and (max-width: 750px){ .bg, .crayons{left: -350px;}}
+// @media only screen and (max-width: 700px){ .bg, .crayons{left: -400px;}}
+// @media only screen and (max-width: 650px){ .bg, .crayons{left: -450px;}}
