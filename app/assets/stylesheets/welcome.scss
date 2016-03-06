@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700|Crimson+Text:400,600,400italic,600italic|Cardo:400,400italic,700);
 
+/* VARIABLES */
 $serif-font: 'Crimson Text', serif;
 $sans-serif-font: 'Helvetica', sans-serif-font;
-
-
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
+$retro-text-shadow: 1px 1px 2px black, 0 0 25px #0066ff, 0 0 5px #0052cc;
 
-body{
+body {
   margin:0px;
   background-color: #fff;
   border-top: 5px solid #4f514e;
@@ -17,7 +17,59 @@ body{
   overflow-x: hidden;
 }
 
-#landing {
+/* GENERAL STYLES */
+.general {
+  // POSITIONING
+  .pos-rel      {position: relative;}
+  .pos-abs      {position: absolute;}
+  .center       {margin: 0 auto;}
+  .center-text  {text-align:center;}
+  .float-left   {float:left;}
+  .float-right  {float: right;}
+
+  // COLOURS
+  .col-white    {color:#ffffff;}
+  .col-black    {color:#000000;}
+
+  // TEXT SHADOWS
+  .shad-black   {text-shadow: $black-text-shadow;}
+  .shad-retro   {text-shadow: $retro-text-shadow;}
+
+  // FONT WEIGHTS
+  .fw-200       {font-weight: 200;}
+  .fw-300       {font-weight: 300;}
+  .fw-400       {font-weight: 400;}
+
+  // MARGIN & PADDING
+  .margin-none              {margin:0px;}
+  .margin-bottom-none       {margin-bottom: 0px;}
+  .margin-top-none          {margin-top: 0px;}
+  .margin-small             {margin:10px;}
+  .margin-right-large       {margin-right:30px;}
+  .margin-left-large        {margin-left:30px;}
+  .margin-horizontal-small  {margin:10px;}
+  .margin-horizontal-large  {margin: 0px 30px;}
+
+  // HEADERS AND FONTS
+  .sub-header {
+    font-size: 60px;
+    letter-spacing: 2px;
+  }
+
+  /* BORDERS */
+  .borderTop, .borderBottom {
+    display: block;
+    position: relative;
+    height: 35px;
+  } .borderTop {
+    background: url('edge_up.png') repeat-x;
+  } .borderBottom {
+    background: url('edge_down.png') repeat-x;
+  }
+}
+
+/* LANDING PAGE STYLES */
+.landing {
   color: white;
   font-style: $serif-font;
 
@@ -40,97 +92,13 @@ body{
     }
   }
 
+  /* FONTS AND HEADINGS */
   h1 {
     letter-spacing: 5px !important;
     font-size: 120px;
     z-index: 3;
     font-weight: 200;
-  }
-  h2 {
+  } h2 {
 
   }
 }
-
-.center{margin: 0 auto;}
-
-/* COLOURS */
-.col-white{color:#ffffff;}
-
-.float-left{float:left;}
-
-/* TEXT SHADOWS */
-.shad-black{
-  text-shadow:
-  -1px -1px 10px rgba(0,0,0,.75),
-  1px -1px 10px rgba(0,0,0,.5),
-  -1px 1px 10px rgba(0,0,0,.5),
-  1px 1px 10px rgba(0,0,0,.5);
-}
-.retroshadow {
-    text-shadow: 1px 1px 2px black, 0 0 25px #0066ff, 0 0 5px #0052cc;
-}
-
-/* FONT WEIGHTS */
-.fw-200{font-weight: 200;}
-
-/* POSITIONING */
-.pos-rel{position: relative;}
-.pos-abs{position: absolute;}
-
-/* MARGIN & PADDING */
-.margin-none{margin:0px;}
-.margin-bottom-none{margin-bottom: 0px;}
-.margin-top-none{margin-top: 0px;}
-.margin-small{margin:10px;}
-.margin-right-large{margin-right:30px;}
-.margin-left-large{margin-left:30px;}
-.margin-horizontal-small{margin:10px;}
-.margin-horizontal-large{margin: 0px 30px;}
-
-.center-text{width:100vw;text-align:center;}
-
-.header-desc{
-  font-size: 80px;
-  z-index: 3;
-  font-weight: 300;
-}
-.sub-header{
-  font-size: 60px;
-  letter-spacing: 2px;
-}
-.bg{
-  min-width: 1100px;
-  width: 100vw;
-  left:0px;
-}
-.bg{z-index: 1;bottom:0px;}
-
-.landing-content{
-  bottom:-250px;
-  height: 100px;
-  width:100vw;
-  position: absolute;
-}
-
-.borderTop{
-  display: block;
-  position: relative;
-  height: 35px;
-  background: url('edge_up.png') repeat-x;
-}.borderBottom{
-  display: block;
-  position: relative;
-  height: 35px;
-  background: url('edge_down.png') repeat-x;
-}
-
-// @media only screen and (max-width: 1100px){ .bg, .crayons{left: -0px;}}
-// @media only screen and (max-width: 1050px){ .bg, .crayons{left: -50px;}}
-// @media only screen and (max-width: 1000px){ .bg, .crayons{left: -100px;}}
-// @media only screen and (max-width: 950px){ .bg, .crayons{left: -150px;}}
-// @media only screen and (max-width: 900px){ .bg, .crayons{left: -200px;}}
-// @media only screen and (max-width: 850px){ .bg, .crayons{left: -250px;}}
-// @media only screen and (max-width: 800px){ .bg, .crayons{left: -300px;}}
-// @media only screen and (max-width: 750px){ .bg, .crayons{left: -350px;}}
-// @media only screen and (max-width: 700px){ .bg, .crayons{left: -400px;}}
-// @media only screen and (max-width: 650px){ .bg, .crayons{left: -450px;}}
