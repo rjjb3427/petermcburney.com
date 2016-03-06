@@ -19,9 +19,11 @@ footer{
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
+
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 }
 
 .inner{
