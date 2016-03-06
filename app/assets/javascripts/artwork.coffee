@@ -32,13 +32,11 @@ $(document).keydown (event) ->
         $('#blur').css 'display': 'none'
       when 37
         id -= 1
-        if id == -1
-          id = numArt - 1
+        id = numArt - 1 if id == -1
         $('#img-active').attr 'src', $('#art' + id).find('img').attr('src')
       when 39
         id += 1
-        if id == numArt
-          id = 0
+        id = 0 if id == numArt
         $('#img-active').attr 'src', $('#art' + id).find('img').attr('src')
   return
 
@@ -51,4 +49,4 @@ $(document).on 'click','#arrow-right', (e) ->
 $(document).on 'click','#arrow-left', (e) ->
   id -= 1;
   id = numArt - 1 if id == -1
-  $('#img-active').attr 'src', $('#art' + id).find('img').attr('src'));
+  $('#img-active').attr 'src', $('#art' + id).find('img').attr('src')
