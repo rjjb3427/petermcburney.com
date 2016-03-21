@@ -6,30 +6,30 @@ id = 0
 numArt = 16
 
 $(document).on 'mouseover','.art',(e) ->
-  $(this).find('#art-text').css 'display':'block'
+  $(this).find('.art-text').css 'display':'block'
 $(document).on 'mouseout','.art',(e) ->
-  $(this).find('#art-text').css 'display':'none'
+  $(this).find('.art-text').css 'display':'none'
 
 $(document).on 'click','#x',(e) ->
   $('body').css 'overflow': 'auto'
   $('#img-active').css 'display': 'none'
-  $('#blur').css 'display': 'none'
+  $('.preview').css 'display': 'none'
 
 $(document).on 'click','.art',(e) ->
   $('body').css 'overflow': 'hidden'
   $('#img-active').css 'display': 'block'
-  $('#blur').css 'display': 'block'
+  $('.preview').css 'display': 'block'
   $('#img-active').attr 'src', $(this).find('img').attr('src')
   id = parseInt($(this).attr('id').slice(3))
 
 # KEYDOWN FUNCTIONALTY
 $(document).keydown (event) ->
-  if $('#blur').css('display') == 'block'
+  if $('.preview').css('display') == 'block'
     switch event.keyCode
       when 27
         $('body').css 'overflow': 'auto'
         $('#img-active').css 'display': 'none'
-        $('#blur').css 'display': 'none'
+        $('.preview').css 'display': 'none'
       when 37
         id -= 1
         id = numArt - 1 if id == -1
