@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :artwork
+  resources :artwork do
+    resources :paintings
+    resources :sketches
+    resources :copic
+  end
+
   resources :photos
 
   root 'welcome#index'

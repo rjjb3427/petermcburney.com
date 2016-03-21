@@ -1,12 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700|Crimson+Text:400,600,400italic,600italic|Cardo:400,400italic,700);
 
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
 /* VARIABLES */
 $serif-font: 'Crimson Text', serif;
 $sans-serif-font: 'Helvetica', sans-serif-font;
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
-$retro-text-shadow: 1px 1px 2px black, 0 0 25px #0066ff, 0 0 5px #0052cc;
+$retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
 
 body {
+  -webkit-font-smoothing: antialiased;
   margin:0px;
   background-color: #fff;
   border-top: 5px solid #4f514e;
@@ -20,25 +23,26 @@ body {
 /* GENERAL STYLES */
 .general {
   // POSITIONING
-  .pos-rel      {position: relative;}
-  .pos-abs      {position: absolute;}
-  .center       {margin: 0 auto;}
-  .center-text  {text-align:center;}
-  .float-left   {float:left;}
-  .float-right  {float: right;}
+  .pos-rel                  {position: relative;}
+  .pos-abs                  {position: absolute;}
+  .center                   {margin: 0 auto;}
+  .center-text              {text-align:center;}
+  .float-left               {float:left;}
+  .float-right              {float: right;}
+  .vertical-center          {top: 50%; transform: translateY(-50%);}
 
   // COLOURS
-  .col-white    {color:#ffffff;}
-  .col-black    {color:#000000;}
+  .col-white                {color:#ffffff;}
+  .col-black                {color:#000000;}
 
   // TEXT SHADOWS
-  .shad-black   {text-shadow: $black-text-shadow;}
-  .shad-retro   {text-shadow: $retro-text-shadow;}
+  .shad-black               {text-shadow: $black-text-shadow;}
+  .shad-retro               {text-shadow: $retro-text-shadow;}
 
   // FONT WEIGHTS
-  .fw-200       {font-weight: 200;}
-  .fw-300       {font-weight: 300;}
-  .fw-400       {font-weight: 400;}
+  .fw-200                   {font-weight: 200;}
+  .fw-300                   {font-weight: 300;}
+  .fw-400                   {font-weight: 400;}
 
   // MARGIN & PADDING
   .margin-none              {margin:0px;}
@@ -56,7 +60,19 @@ body {
     letter-spacing: 2px;
   }
 
-  /* BORDERS */
+  // CONTAINER STYLES
+  .container {
+    background-color: #eeeeee;
+    width: 100vw;
+    overflow: auto;
+    padding-bottom: 10px;
+    p {letter-spacing: 1px;}
+  } .inner {
+    margin: 0px 5vw;
+    width:90vw;
+  }
+
+  // BORDERS
   .borderTop, .borderBottom {
     display: block;
     position: relative;
@@ -65,6 +81,20 @@ body {
     background: url('edge_up.png') repeat-x;
   } .borderBottom {
     background: url('edge_down.png') repeat-x;
+  }
+}
+
+/* NEW PAGE STYLES */
+.new {
+  button {
+    font-size: 16px;
+    width: 148px;
+    height: 47px;
+    background-color: #eeeeee;
+    border: 1px solid #333333;
+    color: #333333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0)
   }
 }
 
