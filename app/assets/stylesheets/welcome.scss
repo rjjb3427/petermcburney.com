@@ -1,20 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700|Crimson+Text:400,600,400italic,600italic|Cardo:400,400italic,700);
-
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,600|Source+Sans+Pro:400,200,300,600);
 
 /* VARIABLES */
-$serif-font: 'Crimson Text', serif;
-$sans-serif-font: 'Helvetica', sans-serif-font;
+$sans-serif-font: 'Helvetica', sans-serif;
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
 $retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
 
 body {
   -webkit-font-smoothing: antialiased;
   margin:0px;
-  background-color: #fff;
-  border-top: 5px solid #4f514e;
+  background-color: #ffffff;
   color: #3a3b39;
   font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -101,34 +99,96 @@ body {
 /* LANDING PAGE STYLES */
 .landing {
   color: white;
-  font-style: $serif-font;
 
-  nav {
-    font-size: 16px;
-    z-index: 3;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-
-    a {
-      cursor: pointer;
-      float: left;
-      margin-left: 10px;
-
-      &:hover {
+  main {
+    section {
+      z-index: 1;
+      position: absolute;
+      width: 100vw;
+      background:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));
+      height: auto;
+      padding-bottom: 40px;
+    }
+    h1 {
+      letter-spacing: 5px !important;
+      text-align: center;
+      text-shadow: $black-text-shadow;
+      font-size: 8vw;
+      font-weight: 200;
+      margin: 50px 0px 0px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 6vw;
+      font-weight: 200;
+      text-shadow: $black-text-shadow;
+      margin: 10px 0px 0px;
+    }
+    h3, a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      text-align: center;
+      font-size: 30px;
+      transition: 0.2s;
+      text-shadow: $black-text-shadow;
+      &:hover{
         color: #eeeeee;
-        text-shadow: $black-text-shadow;
+        transition: 0.2s;
+        transform: scale(1.3);
+      }
+      span {
+        cursor: pointer;
+        margin-left: 20px;
+        &:hover {
+          text-shadow: $retro-text-shadow;
+        }
+      }
+      a {
+        &:hover {
+          text-shadow: $retro-text-shadow;
+        }
       }
     }
-  }
+    h4 {
+      font-weight: 300;
+      text-align: center;
+      font-size: 30px;
+      text-shadow: $black-text-shadow;
+    }
+    img {
+      -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      height: auto;
+      // position: absolute;
+      z-index: 0;
+      // left: 10vw;
+      // width: 80vw;
+      width: 100vw;
+      min-width: 800px;
+    }
 
-  /* FONTS AND HEADINGS */
-  h1 {
-    letter-spacing: 5px !important;
-    font-size: 120px;
-    z-index: 3;
-    font-weight: 200;
-  } h2 {
+    .border-top, .border-bottom {
+      display: block;
+      position: relative;
+      height: 35px;
+    }
 
+    .border-top {
+      top: 2px;
+      background: image-url('edge_up.png') repeat-x;
+    }
+
+    .border-bottom {
+      background: image-url('edge_down.png') repeat-x;
+    }
+
+    .black-div{
+      background: #000000;
+      height: 145px;
+    }
+
+    footer {
+
+    }
   }
 }
