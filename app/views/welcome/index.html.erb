@@ -1,11 +1,30 @@
 <!-- Main Landing Page -->
-<div class="landing">
-  <section class="main">
-    <nav>
-      <a><%= link_to 'Artwork', controller: 'artwork' %></a>
-      <a><%= link_to 'Photography', controller: 'photos' %></a>
-    </nav>
-  </section>
-  <section class="content">
-  </section>
+<div class="landing general">
+  <main>
+    <section>
+      <h1>Peter McBurney's Art</h1>
+      <h2>Artist, Photographer, and Musician.</h2>
+      <hr>
+      <h3>
+        <span>Home</span>
+        <span href="">Profile</span>
+        <span><%= link_to 'Artwork', controller: 'artwork' %></span>
+        <span><%= link_to 'Photography', controller: 'photos' %></span>
+        <span>Concact</span>
+      </h3>
+      <hr>
+    </section>
+    <img src="assets/artwork/copic/numa.jpg"></img>
+    <img src="assets/falls.png">
+      <h1 class="margin-none pos-rel" style="top:-200px;">Featured Artwork</h1>
+    </img>
+    <!-- <span class="border-top"></span>
+    <div class="black-div">
+      <h1 class="margin-none">Featured Artwork</h1>
+    </div>
+    <span class="border-bottom"></span> -->
+    <footer>
+      <h4>Copyright &copy; Peter McBurney 2016. All rights reserved.</h4>
+    </footer>
+  </main>
 </div>
