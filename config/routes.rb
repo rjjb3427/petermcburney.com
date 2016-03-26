@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
   resources :artwork do
-    resources :paintings
-    resources :sketches
-    resources :copic
+    resources :paintings, :sketches, :copic
   end
 
-  resources :photos
+  resources :photos, :profile, :contact
 
   root 'welcome#index'
 
