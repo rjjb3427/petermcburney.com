@@ -7,16 +7,32 @@
       <hr>
       <h3>
         <span>Home</span>
-        <span href="">Profile</span>
+        <span><%= link_to 'Profile', controller: 'profile' %></span>
         <span><%= link_to 'Artwork', controller: 'artwork' %></span>
         <span><%= link_to 'Photography', controller: 'photos' %></span>
-        <span>Concact</span>
+        <span><%= link_to 'Contact', controller: 'contact' %></span>
       </h3>
       <hr>
+      <div class="social center-horizontal">
+        <div class="circle float-left">
+          <a href="https://www.facebook.com/PeterMcBurneyArt/?fref=ts"><img class="icon" src="assets/social/fb.png" style="width:28px;height:auto;" /></a>
+        </div>
+        <div class="circle float-left margin-left-medium">
+          <a href="https://twitter.com/PeterMcBurney"><img class="icon" src="assets/social/tw.png" style="width:28px;height:auto;" /></a>
+        </div>
+        <div class="circle float-left margin-left-medium">
+          <a href="https://www.instagram.com/petermcburney/"><img class="icon" src="assets/social/ig.png" style="width:28px;height:auto;" /></a>
+        </div>
+        <div class="circle float-left margin-left-medium">
+          <a href="https://www.linkedin.com/in/peter-mcburney-a3335984?authType=NAME_SEARCH&authToken=y0cJ&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A299465607%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1458945967540%2Ctas%3Apet"><img class="icon" src="assets/social/li.png" style="width:28px;height:auto;" /></a>
+        </div>
+      </div>
+      <!-- <img class="arrow-down-small center-horizontal" src="assetsarrow-down.png" /> -->
+      <img class="arrow-down center-horizontal" src="assets/general/arrow-down.png" />
     </section>
     <img class="img" src="assets/artwork/copic/numa.jpg"></img>
     <h1 class="margin-none pos-rel" style="top:16vw;z-index:2;">Featured Artwork</h1>
-    <img class="img" src="assets/falls.png"></img>
+    <img class="img" src="assets/banners/abu.png"></img>
     <div class="container">
       <div class="inner">
         <div class="artwork-wrapper pos-rel">
@@ -41,7 +57,7 @@
     </div>
 
     <h1 class="margin-none pos-rel" style="top:16vw;z-index:2;">Featured Photography</h1>
-    <img class="img" src="assets/falls.png"></img>
+    <img class="img" src="assets/banners/falls.png"></img>
     <div class="container">
       <div class="inner">
         <div class="artwork-wrapper pos-rel">
@@ -64,6 +80,8 @@
         </div>
       </div>
     </div>
+    <h1 class="margin-none pos-rel" style="top:16vw;z-index:2;">Instagram</h1>
+    <img class="img" src="assets/banners/falls.png"></img>
 
     <footer>
       <h4>Copyright &copy; Peter McBurney 2016. All rights reserved.</h4>

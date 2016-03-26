@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,600|Source+Sans+Pro:400,200,300,600);
 
 /* VARIABLES */
+
 $sans-serif-font: 'Helvetica', sans-serif;
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
 $retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
@@ -19,6 +20,7 @@ body {
 }
 
 /* GENERAL STYLES */
+
 .general {
   // POSITIONING
   .pos-rel                  {position: relative;}
@@ -28,6 +30,7 @@ body {
   .float-left               {float:left;}
   .float-right              {float: right;}
   .vertical-center          {top: 50%; transform: translateY(-50%);}
+  .center-horizontal        {left: 50%;transform: translateX(-50%);}
 
   // COLOURS
   .col-white                {color:#ffffff;}
@@ -48,8 +51,9 @@ body {
   .margin-top-none          {margin-top: 0px;}
   .margin-small             {margin:10px;}
   .margin-right-large       {margin-right:30px;}
+  .margin-left-small        {margin-left:10px;}
+  .margin-left-medium       {margin-left:20px;}
   .margin-left-large        {margin-left:30px;}
-  .margin-horizontal-small  {margin:10px;}
   .margin-horizontal-large  {margin: 0px 30px;}
 
   // HEADERS AND FONTS
@@ -76,13 +80,54 @@ body {
     position: relative;
     height: 35px;
   } .borderTop {
-    background: url('edge_up.png') repeat-x;
+    background: url('general/edge_up.png') repeat-x;
   } .borderBottom {
-    background: url('edge_down.png') repeat-x;
+    background: url('general/edge_down.png') repeat-x;
+  }
+}
+
+.main {
+
+  aside {
+    width: 45vw;
+    padding: 2vw
+  }
+
+  figure {
+    width: 40vw;
+    padding: 2vw;
+    margin: 0px;
+    margin-right: 2vw;
+  }
+
+  .frame {
+    border: #49291d solid 10px;
+    -webkit-border-image: url('general/wood.png') 200 stretch;
+    -moz-border-image: url('general/wood.png') 200 stretch;
+    border-image: url('general/wood.png') 200 stretch;
+  }
+
+  h1 {
+    letter-spacing: 5px !important;
+    text-align: center;
+    text-shadow: $black-text-shadow;
+    color: #ffffff;
+    font-size: 8vw;
+    font-weight: 200;
+    margin: 50px 0px 0px;
+  }
+
+  .img {
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    height: auto;
+    z-index: 0;
+    width: 100vw;
+    min-width: 800px;
   }
 }
 
 /* NEW PAGE STYLES */
+
 .new {
   button {
     font-size: 16px;
@@ -97,6 +142,7 @@ body {
 }
 
 /* LANDING PAGE STYLES */
+
 .landing {
   color: white;
 
@@ -159,12 +205,49 @@ body {
     .img {
       -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
       height: auto;
-      // position: absolute;
       z-index: 0;
-      // left: 10vw;
-      // width: 80vw;
       width: 100vw;
       min-width: 800px;
+    }
+
+    .social {
+      top: 36vw;
+      position: absolute;
+      .circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+        box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+        &:hover {
+          transition: 0.2s;
+          transform: scale(1.2);
+          -webkit-box-shadow: 0px 0px 30px 0px rgba(255,255,255,1);
+          -moz-box-shadow: 0px 0px 30px 0px rgba(255,255,255,1);
+          box-shadow: 0px 0px 30px 0px rgba(255,255,255,1);
+        }
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .arrow-down-small {
+      position: absolute;
+      top: 42vw;
+      width: 64px;
+    }
+    .arrow-down {
+      position: absolute;
+      top: 40vw;
     }
 
     .border-top, .border-bottom {
@@ -175,11 +258,11 @@ body {
 
     .border-top {
       top: 2px;
-      background: image-url('edge_up.png') repeat-x;
+      background: image-url('general/edge_up.png') repeat-x;
     }
 
     .border-bottom {
-      background: image-url('edge_down.png') repeat-x;
+      background: image-url('general/edge_down.png') repeat-x;
     }
 
     .black-div{
