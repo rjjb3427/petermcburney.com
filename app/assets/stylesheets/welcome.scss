@@ -6,11 +6,19 @@ $sans-serif-font: 'Helvetica', sans-serif;
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,.75), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
 $retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
 
+/* ANIMATIONS */
+
+@-webkit-keyframes arrow-down {
+  0%    {top:40vw;}
+  35%   {top:41vw;}
+  100%  {top:40vw;}
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   margin:0px;
-  background-color: #ffffff;
   color: #3a3b39;
+  background-color: #eaeaea;
   font-size: 18px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
@@ -64,7 +72,7 @@ body {
 
   // CONTAINER STYLES
   .container {
-    background-color: #eeeeee;
+    background-color: #eaeaea;
     width: 100vw;
     overflow: auto;
     padding-bottom: 10px;
@@ -246,6 +254,10 @@ body {
       width: 64px;
     }
     .arrow-down {
+      -webkit-animation-name: arrow-down;
+      -webkit-animation-duration: 0.75s;
+      -webkit-animation-iteration-count: 3;
+      -webkit-animation-delay: 0.2s;
       position: absolute;
       top: 40vw;
     }
