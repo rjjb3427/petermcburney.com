@@ -2,15 +2,61 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-src = ['assets/artwork/copic/numa.jpg','assets/artwork/copic/turtle.jpg','assets/artwork/sketches/snake.jpg',
-    'assets/artwork/copic/harley.jpg','assets/artwork/copic/owl.jpg','assets/artwork/sketches/turtles.jpg']
+# src = ['assets/artwork/copic/numa.jpg','assets/artwork/copic/turtle.jpg','assets/artwork/sketches/snake.jpg',
+#     'assets/artwork/copic/harley.jpg','assets/artwork/copic/owl.jpg','assets/artwork/sketches/turtles.jpg']
+#
+# test = getRandomInt(0, 5)
+# # console.log test
+#
+# getRandomInt = (min, max) ->
+#   Math.floor(Math.random() * (max - min + 1)) + min
+#
+# setInterval ->
+#   console.log src[4]
+# ,5000
 
-test = getRandomInt(0, 5)
-# console.log test
+$(document).ready () ->
+  id = 0
+  numArt = $('.image').length
+  console.log numArt
 
-getRandomInt = (min, max) ->
-  Math.floor(Math.random() * (max - min + 1)) + min
+  # ARROW FUNCTIONALITY
+  $(document).on 'click','#arrow-right', (e) ->
+    id += 1;
+    id = 0 if id == numArt
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
 
-setInterval ->
-  console.log src[4]
-,5000
+  $(document).on 'click','#arrow-left', (e) ->
+    id -= 1;
+    id = numArt - 1 if id == -1
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+
+  $(document).on 'click','#x', (e) ->
+    $('body').css 'overflow': 'auto'
+    $('#img-active').css 'display': 'none'
+    $('.preview').css 'display': 'none'
+
+  $(document).on 'click','.image', (e) ->
+    $('body').css 'overflow': 'hidden'
+    $('#img-active').css 'display': 'block'
+    $('.preview').css 'display': 'block'
+    id = parseInt($(this).attr('id').slice(3))
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+
+  # KEYDOWN FUNCTIONALTY
+  $(document).keydown (event) ->
+    if $('.preview').css('display') == 'block'
+      switch event.keyCode
+        when 27
+          $('body').css 'overflow': 'auto'
+          $('#img-active').css 'display': 'none'
+          $('.preview').css 'display': 'none'
+        when 37
+          id -= 1
+          id = numArt - 1 if id == -1
+          $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+        when 39
+          id += 1
+          id = 0 if id == numArt
+          $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+    return

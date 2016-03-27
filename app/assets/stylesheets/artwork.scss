@@ -60,7 +60,7 @@ nav {
 }
 
 /* ARTWORK CONTAINER STYLES */
-.artwork-wrapper {
+.artwork-wrapper, .photo-wrapper {
   width: calc(100% + 30px);
   margin-left:-30px !important;
   overflow: auto;
@@ -74,7 +74,7 @@ nav {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
 
-  .art {
+  .image {
     cursor: pointer;
     position: relative;
     top: 0px;
@@ -93,14 +93,16 @@ nav {
     clip: rect(0px,150px,100px,0px)
   }
   .art-text {
-    display: none;
+    opacity: 0;
     position: absolute;
     top:0px;
     width: 100%;
     height: 100%;
     z-index: 2;
+    transition: 0.5s ease;
 
     &:hover {
+      opacity: 1;
       background: rgba(0,0,0,0.5);
       transition: 0.5s ease;
     }
