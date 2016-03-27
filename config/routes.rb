@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :photos, :profile, :contact
 
+  # add wildlife, nature resources to photos
+
   root 'welcome#index'
 
   # resources :articles do

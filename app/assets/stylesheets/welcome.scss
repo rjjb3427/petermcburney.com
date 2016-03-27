@@ -178,7 +178,7 @@ body {
       text-shadow: $black-text-shadow;
       margin: 10px 0px 0px;
     }
-    h3, a {
+    h4, a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 300;
@@ -203,12 +203,6 @@ body {
           text-shadow: $retro-text-shadow;
         }
       }
-    }
-    h4 {
-      font-weight: 300;
-      text-align: center;
-      font-size: 30px;
-      text-shadow: $black-text-shadow;
     }
     .img {
       -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
