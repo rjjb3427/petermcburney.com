@@ -1,7 +1,7 @@
 <!-- Main Landing Page -->
 <div class="landing general">
   <!-- IMAGE PREVIEWER -->
-  <div class="preview">
+  <summary>
     <img id="img-active" src="assets/artwork/paintings/osprey.jpg">
     <div class="text-active">
       <h2>African Elephant</h2>
@@ -11,7 +11,7 @@
     <img id="x" src="assets/general/x.png">
     <img id="arrow-left" src="assets/general/arrow-left.png">
     <img id="arrow-right" src="assets/general/arrow-right.png">
-  </div>
+  </summary>
   <!-- MAIN SECTION -->
   <main>
     <section>
@@ -19,10 +19,10 @@
       <h2>Artist, Photographer, and Musician.</h2>
       <hr>
       <h4>
-        <span>Home</span>
         <span><%= link_to 'Profile', controller: 'profile' %></span>
         <span><%= link_to 'Artwork', controller: 'artwork' %></span>
         <span><%= link_to 'Photography', controller: 'photos' %></span>
+        <span><%= link_to 'Commissions', controller: 'commissions' %></span>
         <span><%= link_to 'Contact', controller: 'contact' %></span>
       </h4>
       <hr>
@@ -44,6 +44,7 @@
     </section>
     <img class="img" src="assets/artwork/copic/numa.jpg"></img>
 
+    <!-- Featured Artwork -->
     <div class="pos-rel">
       <img class="img" src="assets/banners/abu.png"></img>
       <h1 class="margin-none pos-abs" style="top:5vw;left:20px;z-index:2;width:100%;text-align:center;">Featured Artwork</h1>
@@ -63,6 +64,7 @@
       </div>
     </div>
 
+    <!-- Featured Photography -->
     <div class="pos-rel">
       <img class="img" src="assets/banners/falls.png"></img>
       <h1 class="margin-none pos-abs" style="top:5vw;left:20px;z-index:2;width:100%;text-align:center;">Featured Photography</h1>
@@ -82,6 +84,7 @@
       </div>
     </div>
 
+    <!-- Instagram Feed -->
     <div class="pos-rel">
       <img class="img" src="assets/banners/owl.png"></img>
       <h1 class="margin-none pos-abs" style="top:5vw;left:20px;z-index:2;width:100%;text-align:center;">Instagram Feed</h1>
