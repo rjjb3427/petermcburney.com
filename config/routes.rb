@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :paintings, :sketches, :copic
   end
 
-  resources :photos, :profile, :contact
+  resources :photos, :profile, :contact, :commissions
 
   # add wildlife, nature resources to photos
 

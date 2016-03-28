@@ -34,23 +34,23 @@ $(document).ready () ->
   $(document).on 'click','#x', (e) ->
     $('body').css 'overflow': 'auto'
     $('#img-active').css 'display': 'none'
-    $('.preview').css 'display': 'none'
+    $('summary').css 'display': 'none'
 
   $(document).on 'click','.image', (e) ->
     $('body').css 'overflow': 'hidden'
     $('#img-active').css 'display': 'block'
-    $('.preview').css 'display': 'block'
+    $('summary').css 'display': 'block'
     id = parseInt($(this).attr('id').slice(3))
     $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
-    if $('.preview').css('display') == 'block'
+    if $('summary').css('display') == 'block'
       switch event.keyCode
         when 27
           $('body').css 'overflow': 'auto'
           $('#img-active').css 'display': 'none'
-          $('.preview').css 'display': 'none'
+          $('summary').css 'display': 'none'
         when 37
           id -= 1
           id = numArt - 1 if id == -1
