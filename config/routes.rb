@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :artwork do
-    resources :paintings, :sketches, :copic
-  end
+  get 'artwork/copic'
+  get 'artwork/paintings'
+  get 'artwork/sketches'
+
+  resources :artwork
 
   resources :photos, :profile, :contact, :commissions
 
