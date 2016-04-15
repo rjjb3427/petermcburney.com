@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @artwork = Article.where(:featured => true)
+    @featured_artwork = Artwork.where(:featured => true)
   end
 end
