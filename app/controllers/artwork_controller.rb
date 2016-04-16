@@ -1,7 +1,7 @@
 class ArtworkController < ApplicationController
 
   def copic
-
+    @copic = Artwork.where(:artwork_type => 'copic')
   end
 
   def index
