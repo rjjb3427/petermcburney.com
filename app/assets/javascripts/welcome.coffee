@@ -18,18 +18,17 @@
 $(document).ready () ->
   id = 0
   numArt = $('.image').length
-  console.log numArt
 
   # ARROW FUNCTIONALITY
   $(document).on 'click','#arrow-right', (e) ->
     id += 1;
     id = 0 if id == numArt
-    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
 
   $(document).on 'click','#arrow-left', (e) ->
     id -= 1;
     id = numArt - 1 if id == -1
-    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
 
   $(document).on 'click','#x', (e) ->
     $('body').css 'overflow': 'auto'
@@ -41,7 +40,10 @@ $(document).ready () ->
     $('#img-active').css 'display': 'block'
     $('summary').css 'display': 'block'
     id = parseInt($(this).attr('id').slice(3))
-    $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+    $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    console.log 'test' + id
+    console.log $('#img' + id).css("background")
+    console.log $('#img' + id).css("background").match('"(.*)"')[1]
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
@@ -54,9 +56,9 @@ $(document).ready () ->
         when 37
           id -= 1
           id = numArt - 1 if id == -1
-          $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+          $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
         when 39
           id += 1
           id = 0 if id == numArt
-          $('#img-active').attr 'src', $('#img' + id).css("background").match('assets(.*)jpg')[0]
+          $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
     return
