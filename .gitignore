@@ -8,6 +8,7 @@
 /.bundle
 .env
 config/database.yml
+config/sercets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
