@@ -18,5 +18,5 @@ class ArtworkController < ApplicationController
 
   def new
   end
-
+  
 end

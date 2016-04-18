@@ -18,7 +18,6 @@
 $(document).ready () ->
   id = 0
   numArt = $('.image').length
-
   # ARROW FUNCTIONALITY
   $(document).on 'click','#arrow-right', (e) ->
     id += 1;
@@ -41,9 +40,6 @@ $(document).ready () ->
     $('summary').css 'display': 'block'
     id = parseInt($(this).attr('id').slice(3))
     $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
-    console.log 'test' + id
-    console.log $('#img' + id).css("background")
-    console.log $('#img' + id).css("background").match('"(.*)"')[1]
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
