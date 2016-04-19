@@ -1,16 +1,6 @@
 <div class="general">
-  <!-- IMAGE PREVIEWER -->
-  <summary>
-    <img id="img-active" src="../../assets/artwork/sketches/osprey.jpg">
-    <div class="text-active">
-      <h2>African Elephant</h2>
-      <hr>
-      <p>Image Info - arcylic on canvas, 101.6x76cm <b style="float:right;">$1000</b></p>
-    </div>
-    <img id="x" src="../../assets/general/x.png">
-    <img id="arrow-left" src="../../assets/general/arrow-left.png">
-    <img id="arrow-right" src="../../assets/general/arrow-right.png">
-  </summary>
+  <!-- Image previewer-->
+  <%= render 'shared/preview' %>
 
   <div class="pos-rel col-white gradient-to-black" style="z-index: 3;width:100vw;">
     <div class="inner">
@@ -26,21 +16,7 @@
         <hr style="margin-bottom:25px;">
       </div>
       <div class="artwork-wrapper pos-rel">
-
-        <!-- Embedded Ruby -->
-        <% @sketch.each_with_index do |artwork, index| %>
-          <div class="float-left">
-            <div id="img<%= index %>" class="image margin-left-large" style="background:url(<%= artwork.image_url %>);background-size:cover;background-position: center center;">
-              <div class="art-text">
-                <h3 class="pos-abs col-white" style="left:5px;margin:5px 0px;opacity:1 !important"><%= artwork.title %></h3>
-                <hr class="pos-abs" style="width:100%;top:30px;">
-                <p class="pos-rel col-white" style="top:25px;left:5px;opacity:1 !important"><%= artwork.media %></p>
-                <p class="pos-rel col-white" style="top:25px;left:5px;opacity:1 !important"><%= artwork.size %></p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
+        <%= render :partial => "shared/images", object: @sketches, as: 'images' %>
       </div>
       <hr>
       <img class="pos-rel" src="../../assets/general/signature_black.png" style="width:300px;height:auto;float:right">

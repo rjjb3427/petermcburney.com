@@ -1,0 +1,17 @@
+<% images.each_with_index do |image, index| %>
+  <div class="float-left">
+    <div id="img<%= index %>" class="image margin-left-large" style="background:url(<%= image.image_url %>);background-size:cover;background-position: center center;">
+      <div class="art-text">
+        <h3 class="title pos-abs col-white" style="left:5px;margin:5px 0px;opacity:1 !important"><%= image.title %></h3>
+        <hr class="pos-abs" style="width:100%;top:30px;">
+        <p class="media pos-rel col-white" style="top:25px;left:5px;opacity:1 !important"><%= image.media %></p>
+        <p class="size pos-rel col-white" style="top:25px;left:5px;opacity:1 !important"><%= image.size %></p>
+        <% if image.for_sale %>
+          <p class="price pos-rel col-white" style="top:25px;left:5px;opacity:1 !important">$ <%= image.price %></p>
+        <% else %>
+          <p class="price pos-rel col-white" style="top:25px;left:5px;opacity:1 !important">SOLD</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

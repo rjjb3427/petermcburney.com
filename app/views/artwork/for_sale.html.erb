@@ -4,7 +4,7 @@
 
   <div class="pos-rel col-white gradient-to-black" style="z-index: 3;width:100vw;">
     <div class="inner">
-      <h1 class="fw-200 shad-retro sub-header" style="margin: 0px;" style="font-size:24px !important;">Copic Markers</h1>
+      <h1 class="fw-200 shad-retro sub-header" style="margin: 0px;" style="font-size:24px !important;">Artwork For Sale</h1>
     </div>
   </div>
   <span class="borderBottom" style="z-index: 3;"></span>
@@ -12,11 +12,11 @@
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
-        <p style="font-size:20px;">Here are a few featured images from my collection.</p>
+        <p style="font-size:20px;">The following pieces of art below are currently for sale. If you're interested, please reach out to me.</p>
         <hr style="margin-bottom:25px;">
       </div>
       <div class="artwork-wrapper pos-rel">
-        <%= render :partial => "shared/images", object: @copic, as: 'images' %>
+        <%= render :partial => "shared/images", object: @for_sale, as: 'images' %>
       </div>
       <hr>
       <img class="pos-rel" src="../../assets/general/signature_black.png" style="width:300px;height:auto;float:right">

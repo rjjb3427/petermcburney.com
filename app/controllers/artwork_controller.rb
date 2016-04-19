@@ -5,11 +5,15 @@ class ArtworkController < ApplicationController
   end
 
   def sketches
-    @sketch = Artwork.where(:artwork_type => 'sketch')
+    @sketches = Artwork.where(:artwork_type => 'sketch')
   end
 
   def paintings
     @paintings = Artwork.where(:artwork_type => 'painting')
+  end
+
+  def for_sale
+    @for_sale = Artwork.where(:for_sale => true)
   end
 
   def index
@@ -18,5 +22,5 @@ class ArtworkController < ApplicationController
 
   def new
   end
-  
+
 end

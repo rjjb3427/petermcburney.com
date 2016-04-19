@@ -18,16 +18,25 @@
 $(document).ready () ->
   id = 0
   numArt = $('.image').length
+
+  setPreviewInnerHtml = () ->
+    $("#previewer .title").html($('#img' + id).find('.title').html())
+    $("#previewer .media").html($('#img' + id).find('.media').html())
+    $("#previewer .size").html($('#img' + id).find('.size').html())
+    $("#previewer .price").html($('#img' + id).find('.price').html())
+
   # ARROW FUNCTIONALITY
   $(document).on 'click','#arrow-right', (e) ->
     id += 1;
     id = 0 if id == numArt
     $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    setPreviewInnerHtml()
 
   $(document).on 'click','#arrow-left', (e) ->
     id -= 1;
     id = numArt - 1 if id == -1
     $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    setPreviewInnerHtml()
 
   $(document).on 'click','#x', (e) ->
     $('body').css 'overflow': 'auto'
@@ -40,6 +49,7 @@ $(document).ready () ->
     $('summary').css 'display': 'block'
     id = parseInt($(this).attr('id').slice(3))
     $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    setPreviewInnerHtml()
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
@@ -53,8 +63,10 @@ $(document).ready () ->
           id -= 1
           id = numArt - 1 if id == -1
           $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+          setPreviewInnerHtml()
         when 39
           id += 1
           id = 0 if id == numArt
           $('#img-active').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+          setPreviewInnerHtml()
     return

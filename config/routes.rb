@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   get 'artwork/copic'
   get 'artwork/paintings'
   get 'artwork/sketches'
+  get 'artwork/for_sale'
 
-  resources :artwork
-
-  resources :photos, :profile, :contact, :commissions
+  resources :artwork, :photos, :profile, :contact, :commissions
 
   # add wildlife, nature resources to photos
 
