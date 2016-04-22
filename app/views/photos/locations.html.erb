@@ -3,29 +3,23 @@
   <%= render 'shared/preview' %>
 
   <!-- Nav -->
-  <%= render :partial => "shared/nav", locals: {title: 'Featured Photography'} %>
+  <%= render :partial => "shared/nav", locals: {title: 'Locations'} %>
 
   <!-- Art grid system -->
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
         <p style="font-size:20px;">Here are a few featured images from my collection.</p>
-        <%= link_to "Nature", controller: "photos", action: "nature" %>
-        <%= link_to "Wildlife", controller: "photos", action: "wildlife" %>
-        <%= link_to "Locations", controller: "photos", action: "locations" %>
         <hr style="margin-bottom:25px;">
       </div>
-
-      <!-- Artwork container -->
       <div class="photo-wrapper pos-rel">
-        <%= render :partial => "shared/images", object: @photos, as: 'images' %>
+        <%= render :partial => "shared/images", object: @locations, as: 'images' %>
       </div>
-
       <hr>
       <img class="pos-rel" src="assets/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>
-
+  
   <!-- Footer -->
   <%= render :partial => "shared/footer" %>
 </div>

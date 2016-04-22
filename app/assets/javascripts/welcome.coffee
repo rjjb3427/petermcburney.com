@@ -21,7 +21,7 @@ $(document).ready () ->
 
   setPreviewInnerHtml = () ->
     $("#previewer .title").html($('#img' + id).find('.title').html())
-    $("#previewer .media").html($('#img' + id).find('.media').html())
+    $("#previewer .media").html($('#img' + id).find('.media').html() + ',')
     $("#previewer .size").html($('#img' + id).find('.size').html())
     $("#previewer .price").html($('#img' + id).find('.price').html())
 
