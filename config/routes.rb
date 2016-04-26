@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   get 'photos/wildlife'
   get 'photos/locations'
 
+  # Admin page for Dad
+  get 'welcome/admin'
+
   resources :artwork, :photos, :profile, :contact, :commissions
 
   root 'welcome#index'
-  
+
 end

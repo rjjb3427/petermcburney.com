@@ -6,14 +6,6 @@ $sans-serif-font: 'Helvetica', sans-serif;
 $black-text-shadow: -1px -1px 10px rgba(0,0,0,0), 1px -1px 10px rgba(0,0,0,.5), -1px 1px 10px rgba(0,0,0,.5), 1px 1px 10px rgba(0,0,0,.5);
 $retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
 
-/* ANIMATIONS */
-
-@-webkit-keyframes arrow-down {
-  0%    {top:40vw;}
-  35%   {top:41vw;}
-  100%  {top:40vw;}
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   margin:0px;
@@ -95,7 +87,6 @@ body {
 }
 
 .main {
-
   aside {
     width: 45vw;
     padding: 2vw
@@ -163,6 +154,7 @@ body {
       height: auto;
       padding-bottom: 40px;
     }
+
     h1 {
       letter-spacing: 5px !important;
       text-align: center;
@@ -171,6 +163,7 @@ body {
       font-weight: 200;
       margin: 50px 0px 0px;
     }
+
     h2 {
       text-align: center;
       font-size: 6vw;
@@ -178,23 +171,27 @@ body {
       text-shadow: $black-text-shadow;
       margin: 10px 0px 0px;
     }
+
     h4, a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 300;
       text-align: center;
-      font-size: 30px;
+      font-size: 2.5vw;
       text-shadow: $black-text-shadow;
+
       span {
         cursor: pointer;
         margin-left: 20px;
         transition: 0.2s;
+
         &:hover {
           color: #eeeeee;
           transition: 0.2s;
           transform: scale(1.3);
         }
       }
+
       a {
         &:hover {
           text-shadow: $retro-text-shadow;
@@ -210,8 +207,9 @@ body {
     }
 
     .social {
-      top: 36vw;
+      bottom: 0px;
       position: absolute;
+
       .circle {
         width: 28px;
         height: 28px;
@@ -221,6 +219,7 @@ body {
         -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
         box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
         transition: 0.2s;
+
         &:hover {
           transition: 0.2s;
           transform: scale(1.2);
@@ -229,33 +228,17 @@ body {
           box-shadow: 0px 0px 30px 0px rgba(255,255,255,1);
         }
       }
+
       .icon {
         position: absolute;
         top: 0;
         cursor: pointer;
         opacity: 0.9;
+
         &:hover {
           opacity: 1;
         }
       }
-    }
-
-    .arrow-down-small {
-      position: absolute;
-      top: 42vw;
-      width: 64px;
-    }
-    .arrow-parent {
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      background-color: blue;
-      position: absolute;
-      top: 40vw;
-      -webkit-animation-name: arrow-down;
-      -webkit-animation-duration: 0.75s;
-      -webkit-animation-iteration-count: 3;
-      -webkit-animation-delay: 0.2s;
     }
 
     .border-top, .border-bottom {

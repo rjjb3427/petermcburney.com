@@ -3,4 +3,8 @@ class WelcomeController < ApplicationController
     @featured_artwork = Artwork.where(:featured => true)
     @featured_photos = Photo.where(:featured => true)
   end
+
+  def admin
+    
+  end
 end
