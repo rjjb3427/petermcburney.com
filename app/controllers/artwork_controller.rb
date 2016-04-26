@@ -10,7 +10,7 @@ class ArtworkController < ApplicationController
 
   # Read Methods
   def index
-     @artwork = Artwork.all
+     @artwork = Artwork.where(:featured => true)
   end
 
   def copic

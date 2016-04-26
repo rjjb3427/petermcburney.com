@@ -1,1 +1,48 @@
-<h1>Admin</h1>
+<div class="general">
+  <!-- Nav -->
+  <%= render :partial => "shared/nav", locals: {title: 'Admin Section'} %>
+
+  <!-- Art grid system -->
+  <div class="container">
+    <div class="inner">
+
+      <!-- Featured Artwork -->
+      <div class="text-wrapper">
+        <h1>Featured Artwork</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/artwork", object: @featured_artwork, as: 'images' %>
+
+      <!-- For Sale -->
+      <div class="text-wrapper">
+        <h1>For Sale</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/artwork", object: @for_sale_artwork, as: 'images' %>
+
+      <!-- Paintings -->
+      <div class="text-wrapper">
+        <h1>Paintings</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/artwork", object: @painting_artwork, as: 'images' %>
+
+      <!-- Copic -->
+      <div class="text-wrapper">
+        <h1>Copic</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/artwork", object: @copic_artwork, as: 'images' %>
+
+      <!-- Sketches -->
+      <div class="text-wrapper">
+        <h1>Sketches</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/artwork", object: @sketch_artwork, as: 'images' %>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <%= render :partial => "shared/footer" %>
+</div>

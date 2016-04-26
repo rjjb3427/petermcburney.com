@@ -1,40 +1,79 @@
-<main id="edit">
-  <h1>Edit</h1>
-  <hr>
+<main id="edit" class="general">
 
-  <%= form_for :artwork, url: artwork_path(@artwork), method: :patch do |f| %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
+  <!-- Nav -->
+  <%= render :partial => "shared/nav", locals: {title: 'Edit Artwork'} %>
 
-    <p>
-      <%= f.label :artwork_type %><br>
-      <%= f.text_field :artwork_type %>
-    </p>
+  <div class="container">
+    <div class="inner">
+      <h1>Parameters</h1>
+      <hr>
 
-    <p>
-      <%= f.label :media%><br>
-      <%= f.text_field :media %>
-    </p>
+      <%= form_for :artwork, url: artwork_path(@artwork), method: :patch do |f| %>
+        <p class="float-left">
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </p>
 
-    <p>
-      <%= f.label :size %><br>
-      <%= f.text_area :size %>
-    </p>
+        <!-- Artwork Type -->
+        <div class="float-left">
+          <h4><%= f.label :artwork_type%></h4>
+          <p class="float-left">Painting
+            <br>
+            <%= f.radio_button :artwork_type, "painting" %>
+          </p>
+          <p class="float-left">Copic
+            <br>
+            <%= f.radio_button :artwork_type, "copic" %>
+          </p>
+          <p class="float-left">Sketch
+            <br>
+            <%= f.radio_button :artwork_type, "sketch" %>
+          </p>
+        </div>
 
-    <p>
-      <%= f.label :for_sale%><br>
-      <%= f.text_field :for_sale %>
-    </p>
+        <p class="float-left">
+          <%= f.label :media%><br>
+          <%= f.text_field :media %>
+        </p>
 
-    <p>
-      <%= f.label :price %><br>
-      <%= f.text_area :price %>
-    </p>
+        <p class="float-left">
+          <%= f.label :size %><br>
+          <%= f.text_field :size %>
+        </p>
 
-    <p><%= f.submit %></p>
-  <% end %>
+        <div class="float-left">
+          <h4><%= f.label :for_sale%></h4>
+          <p class="float-left">True
+            <br>
+            <%= f.radio_button :for_sale, "true" %>
+          </p>
+          <p class="float-left">False
+            <br>
+            <%= f.radio_button :for_sale, "false" %>
+          </p>
+        </div>
 
-  <img src="<%= @artwork.image_url %>">
+        <p class="float-left">
+          <%= f.label :price %><br>
+          <%= f.text_field :price %>
+        </p>
+
+        <p class="float-left"><%= f.submit %></p>
+        <br>
+        <br>
+        <br>
+      <% end %>
+
+      <h1>Preview</h1>
+      <hr>
+      <figure class="center-horizontal">
+        <img src="<%= @artwork.image_url %>">
+        <figcaption>
+          <h2 class="title"><%= @artwork.title %></h2>
+          <hr>
+          <p><span class="media"><%= @artwork.media %></span> <span class="size"><%= @artwork.size %></span> <b style="float:right;"><span class="price"><%= @artwork.price %></span></b></p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
 </main>

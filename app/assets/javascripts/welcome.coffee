@@ -1,19 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
-# src = ['assets/artwork/copic/numa.jpg','assets/artwork/copic/turtle.jpg','assets/artwork/sketches/snake.jpg',
-#     'assets/artwork/copic/harley.jpg','assets/artwork/copic/owl.jpg','assets/artwork/sketches/turtles.jpg']
-#
-# test = getRandomInt(0, 5)
-# # console.log test
-#
-# getRandomInt = (min, max) ->
-#   Math.floor(Math.random() * (max - min + 1)) + min
-#
-# setInterval ->
-#   console.log src[4]
-# ,5000
 
 $(document).ready () ->
   id = 0
@@ -44,12 +28,20 @@ $(document).ready () ->
     $('summary').css 'display': 'none'
 
   $(document).on 'click','.image', (e) ->
-    $('body').css 'overflow': 'hidden'
-    $('#previewer figure img').css 'display': 'block'
-    $('summary').css 'display': 'block'
-    id = parseInt($(this).attr('id').slice(3))
-    $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
-    setPreviewInnerHtml()
+    if !(window.location.href.slice(-5) == 'admin')
+      $('body').css 'overflow': 'hidden'
+      $('#previewer figure img').css 'display': 'block'
+      $('summary').css 'display': 'block'
+      id = parseInt($(this).attr('id').slice(3))
+      $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+      setPreviewInnerHtml()
+
+  $('#edit input').bind 'input', ->
+    switch $(this).attr('id')
+      when 'artwork_title'  then  $('#edit .title').html($(this).val())
+      when 'artwork_media'  then  $('#edit .media').html($(this).val())
+      when 'artwork_size'   then  $('#edit .size').html($(this).val())
+      when 'artwork_price'  then  $('#edit .price').html($(this).val())
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
