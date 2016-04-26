@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin calc ($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
 nav {
   width: 100vw;
   height: 60px;
@@ -22,23 +27,40 @@ summary {
   width: 100vw;
   display: none;
 
-  #img-active {
+  figure {
+    margin: 0px;
     position: relative;
-    display: none;
-    max-height: 350px;
+    min-height: 500px;
+    height: 90%;
     top: 40px;
-    z-index: 10;
-    height:auto;
+    display: inline-block;
     left: 50%;
     transform: translateX(-50%);
-  }
 
-  .text-active {
-    color: #ffffff !important;
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 30px;
-    overflow: auto;
+    p {
+      font-weight: 500;
+    }
+
+    img {
+      position: relative;
+      display: none;
+      z-index: 10;
+      width: auto;
+      height: 100%;
+    }
+
+    figcaption {
+      padding: 0px 20px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      z-index: 20;
+      background: rgba(0,0,0,0.5);
+      color: #ffffff !important;
+      @include calc(width, "100% - 40px");
+      margin: 0 auto;
+      overflow: auto;
+    }
   }
 
   #x {
