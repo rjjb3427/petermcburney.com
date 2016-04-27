@@ -6,6 +6,10 @@ class ArtworkController < ApplicationController
   end
 
   def create
+    @artwork = Artwork.new(article_params)
+
+    @artwork.save
+    redirect_to :controller => 'welcome', :action => 'admin'
   end
 
   # Read Methods
@@ -50,6 +54,6 @@ class ArtworkController < ApplicationController
   # Private Methods
   private
     def artwork_params
-      params.require(:artwork).permit(:title, :artwork_type, :media, :size, :for_sale, :price)
+      params.require(:artwork).permit(:title, :image_url, :artwork_type, :media, :size, :for_sale, :price)
     end
 end

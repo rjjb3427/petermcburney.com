@@ -1,13 +1,21 @@
-
 $(document).ready () ->
   id = 0
   numArt = $('.image').length
 
+  # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->
     $("#previewer .title").html($('#img' + id).find('.title').html())
     $("#previewer .media").html($('#img' + id).find('.media').html() + ',')
     $("#previewer .size").html($('#img' + id).find('.size').html())
     $("#previewer .price").html($('#img' + id).find('.price').html())
+
+  # Update the previewer when an input in changed
+  $('#edit input, #new input').bind 'input', ->
+    switch $(this).attr('id')
+      when 'artwork_title'  then  $('#edit .title, #new .title').html($(this).val())
+      when 'artwork_media'  then  $('#edit .media, #new .media').html($(this).val())
+      when 'artwork_size'   then  $('#edit .size, #new .size').html($(this).val())
+      when 'artwork_price'  then  $('#edit .price, #new .price').html($(this).val())
 
   # ARROW FUNCTIONALITY
   $(document).on 'click','#arrow-right', (e) ->
@@ -35,13 +43,6 @@ $(document).ready () ->
       id = parseInt($(this).attr('id').slice(3))
       $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
       setPreviewInnerHtml()
-
-  $('#edit input').bind 'input', ->
-    switch $(this).attr('id')
-      when 'artwork_title'  then  $('#edit .title').html($(this).val())
-      when 'artwork_media'  then  $('#edit .media').html($(this).val())
-      when 'artwork_size'   then  $('#edit .size').html($(this).val())
-      when 'artwork_price'  then  $('#edit .price').html($(this).val())
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
