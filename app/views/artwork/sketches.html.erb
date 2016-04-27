@@ -2,13 +2,10 @@
   <!-- Image previewer-->
   <%= render 'shared/preview' %>
 
-  <div class="pos-rel col-white gradient-to-black" style="z-index: 3;width:100vw;">
-    <div class="inner">
-      <h1 class="fw-200 shad-retro sub-header" style="margin: 0px;" style="font-size:24px !important;">Sketches</h1>
-    </div>
-  </div>
-  <span class="borderBottom" style="z-index: 3;"></span>
-  <!-- art grid system -->
+  <!-- Nav -->
+  <%= render :partial => "shared/nav", locals: {title: 'Sketches'} %>
+
+  <!-- Art grid system -->
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
@@ -22,11 +19,7 @@
       <img class="pos-rel" src="../../assets/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>
-  <!-- footer -->
-  <span class="borderTop" style="z-index: 3;top: 2px;"></span>
-  <footer class="gradient-from-black">
-    <div class="pos-rel inner shad-retro" style="top:12px;font-size:32px;">
-      Copyright &copy; Peter McBurney 2016
-    </div>
-  </footer>
+
+  <!-- Footer -->
+  <%= render :partial => "shared/footer" %>
 </div>
