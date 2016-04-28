@@ -5,75 +5,82 @@
 
   <div class="container">
     <div class="inner">
+      <h1>Parameters</h1>
+      <hr>
+
       <div style="overflow:hidden;">
+        <%= form_for :artwork, url: artwork_index_path, html: { multipart: true } do |f| %>
+          <div style="overflow:hidden;">
+            <section class="float-left">
+              <h4><%= f.label :title %></h4>
+              <%= f.text_field :title %>
+            </section>
 
-        <%= form_for :artwork, url: artwork_index_path do |f| %>
-          <p class="float-left">
-            <%= f.label :title %><br>
-            <%= f.text_field :title %>
-          </p>
+            <section class="float-left">
+              <h4><%= f.label :order%></h4>
+              <%= f.text_field :order %>
+            </section>
 
-          <p class="float-left">
-            <%= f.label :order%><br>
-            <%= f.text_field :order %>
-          </p>
+            <section class="float-left">
+              <h4><%= f.label :media%></h4>
+              <%= f.text_field :media %>
+            </section>
 
-          <p class="float-left">
-            <%= f.label :media%><br>
-            <%= f.text_field :media %>
-          </p>
+            <section class="float-left">
+              <h4><%= f.label :size %></h4>
+              <%= f.text_field :size %>
+            </section>
 
-          <p class="float-left">
-            <%= f.label :size %><br>
-            <%= f.text_field :size %>
-          </p>
+            <!-- Artwork Type -->
+            <section class="float-left">
+              <h4><%= f.label :artwork_type%></h4>
+              <p class="float-left">Painting
+                <br>
+                <%= f.radio_button :artwork_type, "painting" %>
+              </p>
+              <p class="float-left">Copic
+                <br>
+                <%= f.radio_button :artwork_type, "copic" %>
+              </p>
+              <p class="float-left">Sketch
+                <br>
+                <%= f.radio_button :artwork_type, "sketch" %>
+              </p>
+            </section>
 
-          <!-- Artwork Type -->
-          <div class="float-left">
-            <h4><%= f.label :artwork_type%></h4>
-            <p class="float-left">Painting
-              <br>
-              <%= f.radio_button :artwork_type, "painting" %>
-            </p>
-            <p class="float-left">Copic
-              <br>
-              <%= f.radio_button :artwork_type, "copic" %>
-            </p>
-            <p class="float-left">Sketch
-              <br>
-              <%= f.radio_button :artwork_type, "sketch" %>
-            </p>
+            <section class="float-left">
+              <h4><%= f.label :featured%></h4>
+              <p class="float-left">True
+                <br>
+                <%= f.radio_button :featured, "true" %>
+              </p>
+              <p class="float-left">False
+                <br>
+                <%= f.radio_button :featured, "false" %>
+              </p>
+            </section>
+
+            <section class="float-left">
+              <h4><%= f.label :for_sale%></h4>
+              <p class="float-left">True
+                <br>
+                <%= f.radio_button :for_sale, "true" %>
+              </p>
+              <p class="float-left">False
+                <br>
+                <%= f.radio_button :for_sale, "false" %>
+              </p>
+            </section>
+
+            <section class="float-left">
+              <h4><%= f.label :price %></h4>
+              <%= f.text_field :price %>
+            </section>
+
+            <div class="float-left">
+              <%= f.submit %>
+            </div>
           </div>
-
-          <div class="float-left">
-            <h4><%= f.label :featured%></h4>
-            <p class="float-left">True
-              <br>
-              <%= f.radio_button :featured, "true" %>
-            </p>
-            <p class="float-left">False
-              <br>
-              <%= f.radio_button :featured, "false" %>
-            </p>
-          </div>
-
-          <div class="float-left">
-            <h4><%= f.label :for_sale%></h4>
-            <p class="float-left">True
-              <br>
-              <%= f.radio_button :for_sale, "true" %>
-            </p>
-            <p class="float-left">False
-              <br>
-              <%= f.radio_button :for_sale, "false" %>
-            </p>
-          </div>
-
-          <p class="float-left">
-            <%= f.label :price %><br>
-            <%= f.text_field :price %>
-          </p>
-          <%= f.submit %>
         <% end %>
       </div>
 

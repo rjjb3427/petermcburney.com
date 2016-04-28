@@ -8,15 +8,15 @@
       <div style="overflow:hidden;">
 
         <%= form_for :photo, url: new_photo_path do |f| %>
-          <p class="float-left">
-            <%= f.label :title %><br>
+          <div class="float-left">
+            <h4><%= f.label :title %></h4>
             <%= f.text_field :title %>
-          </p>
+          </div>
 
-          <p class="float-left">
+          <div class="float-left">
             <%= f.label :location%><br>
             <%= f.text_field :location %>
-          </p>
+          </div>
 
           <!-- Artwork Type -->
           <div class="float-left">

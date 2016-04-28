@@ -146,7 +146,10 @@ body {
 /* NEW PAGE STYLES */
 
 #new {
-  button {}
+  section {
+    height: 140px;
+    border-right: 1px solid #333333;
+  }
 }
 
 /* EDIT PAGE STYLES */
