@@ -1,5 +1,5 @@
 class ArtworkController < ApplicationController
-  http_basic_authenticate_with name: "test", password: "test", except: [:index, :copic, :sketches, :paintings, :for_sale]
+  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:index, :copic, :sketches, :paintings, :for_sale]
 
   # Create Methods
   def new
