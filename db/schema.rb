@@ -28,10 +28,6 @@ ActiveRecord::Schema.define(version: 20160427174036) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "order"
-    t.string   "s3_file_file_name"
-    t.string   "s3_file_content_type"
-    t.integer  "s3_file_file_size"
-    t.datetime "s3_file_updated_at"
   end
 
   create_table "photos", force: :cascade do |t|

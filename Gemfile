@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# for amazon web services
-gem 'aws-sdk'
-gem 'paperclip'
 gem 'dotenv-rails', :groups => [:development, :test]	# env variable to keep sensitive data
 
 # solution for images heroku
