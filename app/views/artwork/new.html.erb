@@ -8,10 +8,6 @@
       <div style="overflow:hidden;">
 
         <%= form_for :artwork, url: new_artwork_path do |f| %>
-          <div class="float-left">
-            <%= f.label :s3_file %>
-            <%= f.file_field :s3_file %>
-          </div>
           <p class="float-left">
             <%= f.label :title %><br>
             <%= f.text_field :title %>

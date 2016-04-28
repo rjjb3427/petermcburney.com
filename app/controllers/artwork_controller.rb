@@ -3,11 +3,11 @@ class ArtworkController < ApplicationController
 
   # Create Methods
   def new
+    @artwork = Artwork.new
   end
 
   def create
-    puts 'create'
-    @artwork = Artwork.new(article_params)
+    @artwork = Artwork.new(artwork_params)
 
     @artwork.save
     redirect_to :controller => 'welcome', :action => 'admin'

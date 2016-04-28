@@ -13,5 +13,7 @@ class WelcomeController < ApplicationController
     @painting_artwork = Artwork.where(:artwork_type => 'painting').order(:order)
     @sketch_artwork = Artwork.where(:artwork_type => 'sketch').order(:order)
     @for_sale_artwork = Artwork.where(:for_sale => true).order(:order)
+
+    @featured_photos = Photo.where(:featured => true)
   end
 end
