@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Static artwork pages
   get 'artwork/copic'
   get 'artwork/paintings'
@@ -17,5 +16,4 @@ Rails.application.routes.draw do
   resources :artwork, :photos, :profile, :contact, :commissions
 
   root 'welcome#index'
-
 end

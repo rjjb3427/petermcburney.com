@@ -9,8 +9,11 @@ class ArtworkController < ApplicationController
   def create
     @artwork = Artwork.new(artwork_params)
 
-    @artwork.save
-    redirect_to :controller => 'welcome', :action => 'admin'
+    if @artwork.save
+      redirect_to :controller => 'welcome', :action => 'admin'
+    else
+      render 'new'
+    end
   end
 
   # Read Methods
