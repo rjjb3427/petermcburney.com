@@ -15,23 +15,23 @@ class ArtworkController < ApplicationController
 
   # Read Methods
   def index
-     @artwork = Artwork.where(:featured => true)
+     @artwork = Artwork.where(:featured => true).order(:order)
   end
 
   def copic
-    @copic = Artwork.where(:artwork_type => 'copic')
+    @copic = Artwork.where(:artwork_type => 'copic').order(:order)
   end
 
   def sketches
-    @sketches = Artwork.where(:artwork_type => 'sketch')
+    @sketches = Artwork.where(:artwork_type => 'sketch').order(:order)
   end
 
   def paintings
-    @paintings = Artwork.where(:artwork_type => 'painting')
+    @paintings = Artwork.where(:artwork_type => 'painting').order(:order)
   end
 
   def for_sale
-    @for_sale = Artwork.where(:for_sale => true)
+    @for_sale = Artwork.where(:for_sale => true).order(:order)
   end
 
   # Update Methods

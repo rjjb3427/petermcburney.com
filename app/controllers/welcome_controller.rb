@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   http_basic_authenticate_with name: "test", password: "test", except: [:index]
 
   def index
-    @featured_artwork = Artwork.where(:featured => true)
+    @featured_artwork = Artwork.where(:featured => true).order(:order)
     @featured_photos = Photo.where(:featured => true)
   end
 
