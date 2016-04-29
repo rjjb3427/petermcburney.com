@@ -83,6 +83,7 @@
           <!-- Submit -->
           <div class="float-left">
             <%= f.submit %>
+            <%= link_to 'Destroy', artwork_path(@artwork), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
       <% end %>

@@ -1,9 +1,5 @@
 class Artwork < ActiveRecord::Base
   has_attached_file :s3,
-  styles: {
-    thumb: '100x100>',
-    medium: '300x300>'
-  },
   :storage => :s3,
   :bucket => "petermcburneyartwork",
   :s3_region => ENV['AWS_REGION'],
@@ -12,8 +8,7 @@ class Artwork < ActiveRecord::Base
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   },
-  :url =>':s3_domain_url',
-  :path => '/:class/:attachment/:id_partition/:style/:filename'
+  :url =>':s3_domain_url'
 
   validates :title, presence: true
   validates_attachment_content_type :s3, :content_type => /\Aimage\/.*\Z/

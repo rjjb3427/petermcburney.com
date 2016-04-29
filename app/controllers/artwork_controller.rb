@@ -53,7 +53,12 @@ class ArtworkController < ApplicationController
   end
 
   # Delete Methods
-  # enter delete logic here
+  def destroy
+    @artwork = Artwork.find(params[:id])
+    @artwork.destroy
+
+    redirect_to :controller => 'welcome', :action => 'admin'
+  end
 
   # Private Methods
   private
