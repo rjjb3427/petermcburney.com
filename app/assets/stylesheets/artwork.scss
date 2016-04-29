@@ -41,7 +41,6 @@ summary {
 
     img {
       position: relative;
-      display: none;
       z-index: 10;
       width: auto;
       height: 100%;
@@ -108,10 +107,12 @@ summary {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     margin-bottom:20px;
   }
+  
   .art-image {
     width:100%;
     clip: rect(0px,150px,100px,0px)
   }
+
   .art-text {
     opacity: 0;
     position: absolute;
@@ -126,6 +127,11 @@ summary {
       background: rgba(0,0,0,0.5);
       transition: 0.5s ease;
     }
+  }
+
+  .active {
+    opacity: 1;
+    background: rgba(0,0,0,0.5);
   }
 }
 
@@ -162,3 +168,25 @@ summary {
 
 /* Filter Styles */
 .opacity:hover {-webkit-filter: opacity(50%);filter: opacity(25%);transition: 0.5s ease;}
+
+@media screen and (max-width: 906px) {
+  .artwork-wrapper, .photo-wrapper {
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+}
+
+@media screen and (max-width: 593px) {
+  body {
+    overflow: auto !important;
+  }
+  #previewer {
+    display: none !important;
+  }
+  .artwork-wrapper, .photo-wrapper {
+    .image {
+      width: 80vw;
+      height: 64vw;
+    }
+  }
+}

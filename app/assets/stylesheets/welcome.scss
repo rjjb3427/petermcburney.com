@@ -148,19 +148,19 @@ body {
 /* EDIT AND NEW PAGE STYLES */
 
 #edit, #new {
-  h4 {
-    margin: 10px 0px;
-  }
-
-  p {
-    font-size: 12px;
-  }
-
   section {
     height: 110px;
     border-right: 1px solid #333333;
     margin-right: 10px;
     padding-right: 10px;
+
+    h4 {
+      margin: 10px 0px;
+    }
+
+    p {
+      font-size: 12px;
+    }
 
     .order {
       width: 40px;
@@ -174,6 +174,10 @@ body {
     height: 500px;
     width: auto;
     color: #ffffff;
+
+    p {
+      font-weight: 500;
+    }
 
     img {
       height: 100%;

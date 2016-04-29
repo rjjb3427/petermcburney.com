@@ -2,8 +2,6 @@ $(document).ready () ->
   id = 0
   numArt = $('.image').length
 
-  console.log 'test dev 23'
-
   # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->
     $("#previewer .title").html($('#img' + id).find('.title').html())
@@ -34,17 +32,20 @@ $(document).ready () ->
 
   $(document).on 'click','#x', (e) ->
     $('body').css 'overflow': 'auto'
-    $('#previewer figure img').css 'display': 'none'
     $('summary').css 'display': 'none'
 
+
   $(document).on 'click','.image', (e) ->
-    if !(window.location.href.slice(-5) == 'admin')
+    if !(window.location.href.slice(-5) == 'admin') && (!window.matchMedia("(max-width: 593px)").matches)
       $('body').css 'overflow': 'hidden'
-      $('#previewer figure img').css 'display': 'block'
       $('summary').css 'display': 'block'
       id = parseInt($(this).attr('id').slice(3))
       $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
       setPreviewInnerHtml()
+    else if !(window.location.href.slice(-5) == 'admin') && (window.matchMedia("(max-width: 593px)").matches)
+      switch $(this).find('.art-text').hasClass('active')
+        when false then $(this).find('.art-text').addClass('active')
+        when true  then $(this).find('.art-text').removeClass('active')
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
@@ -52,7 +53,6 @@ $(document).ready () ->
       switch event.keyCode
         when 27
           $('body').css 'overflow': 'auto'
-          $('#previewer figure img').css 'display': 'none'
           $('summary').css 'display': 'none'
         when 37
           id -= 1
