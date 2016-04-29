@@ -3,7 +3,7 @@ class ArtworkController < ApplicationController
 
   # Create Methods
   def new
-    @artwork = Artwork.new
+    @artwork = Artwork.new(:artwork_type => "painting", :featured => "false", :for_sale => "false")
   end
 
   def create
@@ -12,7 +12,7 @@ class ArtworkController < ApplicationController
     if @artwork.save
       redirect_to :controller => 'welcome', :action => 'admin'
     else
-      render 'new'
+      redirect_to :controller => 'artwork', :action => 'new'
     end
   end
 

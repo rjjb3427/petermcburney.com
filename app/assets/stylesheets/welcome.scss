@@ -13,6 +13,8 @@ $retro-text-shadow: 1px 1px 2px black, 0 0 25px #555555, 0 0 5px #222222;
   #{$property}: calc(#{$expression});
 }
 
+/* SHARED BODY STYLES */
+
 body {
   -webkit-font-smoothing: antialiased;
   margin:0px;
@@ -143,18 +145,28 @@ body {
   }
 }
 
-/* NEW PAGE STYLES */
-
-#new {
-  section {
-    height: 140px;
-    border-right: 1px solid #333333;
-  }
-}
-
-/* EDIT PAGE STYLES */
+/* EDIT AND NEW PAGE STYLES */
 
 #edit, #new {
+  h4 {
+    margin: 10px 0px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  section {
+    height: 110px;
+    border-right: 1px solid #333333;
+    margin-right: 10px;
+    padding-right: 10px;
+
+    .order {
+      width: 40px;
+    }
+  }
+
   figure {
     margin: 0px;
     position: relative;

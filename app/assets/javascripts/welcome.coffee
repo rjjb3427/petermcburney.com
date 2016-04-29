@@ -2,7 +2,7 @@ $(document).ready () ->
   id = 0
   numArt = $('.image').length
 
-  console.log 'test dev 17'
+  console.log 'test dev 23'
 
   # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->

@@ -11,24 +11,15 @@
       <div style="overflow:hidden;">
         <%= form_for :artwork, url: artwork_index_path, html: { multipart: true } do |f| %>
           <div style="overflow:hidden;">
+            <!-- Title -->
             <section class="float-left">
               <h4><%= f.label :title %></h4>
               <%= f.text_field :title %>
             </section>
 
             <section class="float-left">
-              <h4><%= f.label :order%></h4>
-              <%= f.text_field :order %>
-            </section>
-
-            <section class="float-left">
-              <h4><%= f.label :media%></h4>
-              <%= f.text_field :media %>
-            </section>
-
-            <section class="float-left">
-              <h4><%= f.label :size %></h4>
-              <%= f.text_field :size %>
+              <h4><%= f.label :s3 %></h4>
+              <%= f.file_field :s3 %>
             </section>
 
             <!-- Artwork Type -->
@@ -48,6 +39,38 @@
               </p>
             </section>
 
+            <!-- Media -->
+            <section class="float-left">
+              <h4><%= f.label :media%></h4>
+              <%= f.text_field :media %>
+            </section>
+
+            <!-- Size -->
+            <section class="float-left">
+              <h4><%= f.label :size %></h4>
+              <%= f.text_field :size %>
+            </section>
+
+            <!-- For Sale -->
+            <section class="float-left">
+              <h4><%= f.label :for_sale%></h4>
+              <p class="float-left">True
+                <br>
+                <%= f.radio_button :for_sale, "true"%>
+              </p>
+              <p class="float-left">False
+                <br>
+                <%= f.radio_button :for_sale, "false" %>
+              </p>
+            </section>
+
+            <!-- Price -->
+            <section class="float-left">
+              <h4><%= f.label :price %></h4>
+              <%= f.text_field :price %>
+            </section>
+
+            <!-- Featured -->
             <section class="float-left">
               <h4><%= f.label :featured%></h4>
               <p class="float-left">True
@@ -60,29 +83,21 @@
               </p>
             </section>
 
+            <!-- Order -->
             <section class="float-left">
-              <h4><%= f.label :for_sale%></h4>
-              <p class="float-left">True
-                <br>
-                <%= f.radio_button :for_sale, "true" %>
-              </p>
-              <p class="float-left">False
-                <br>
-                <%= f.radio_button :for_sale, "false" %>
-              </p>
+              <h4><%= f.label :order%></h4>
+              <%= f.text_field :order, :class => 'order' %>
             </section>
 
-            <section class="float-left">
-              <h4><%= f.label :price %></h4>
-              <%= f.text_field :price %>
-            </section>
-
+            <!-- Submit -->
             <div class="float-left">
               <%= f.submit %>
             </div>
           </div>
         <% end %>
       </div>
+
+      <hr>
 
       <!-- Make this preview dynamic -->
       <h1>Preview</h1>
@@ -97,4 +112,7 @@
       </figure>
     </div>
   </div>
-</div>
+
+  <!-- Footer -->
+  <%= render :partial => "shared/footer" %>
+</main>
