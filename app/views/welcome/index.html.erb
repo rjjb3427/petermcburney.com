@@ -65,16 +65,18 @@
       <h1 class="margin-none pos-abs" style="top:5vw;z-index:2;width:100%;text-align:center;">Instagram Feed</h1>
     </div>
 
+    <!-- Instafeed.js -->
     <div id="instafeed"></div>
 
     <script type="text/javascript">
-        var userFeed = new Instafeed({
-            get: 'user',
-            userId: '<%= ENV['INSTA_USER'] %>',
-            accessToken: '<%= ENV['INSTA_ACCESS'] %>',
-            useHttp: true
-        });
-        userFeed.run();
+      var userFeed = new Instafeed({
+        get: 'user',
+        userId: '<%= ENV['INSTA_USER'] %>',
+        accessToken: '<%= ENV['INSTA_ACCESS'] %>',
+        resolution: 'low_resolution',
+        useHttp: true
+      });
+      userFeed.run();
     </script>
 
     <!-- Footer -->

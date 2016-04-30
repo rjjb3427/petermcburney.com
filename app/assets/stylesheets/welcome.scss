@@ -28,6 +28,14 @@ body {
   overflow-x: hidden;
 }
 
+#instafeed {
+  overflow-x: scroll;
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
+}
+
 /* GENERAL STYLES */
 
 .general {
@@ -99,10 +107,13 @@ body {
 
   .borderTop {
     background: url('general/edge_up.png') repeat-x;
+    z-index: 3;
+    top: 2px;
   }
 
   .borderBottom {
     background: url('general/edge_down.png') repeat-x;
+    z-index: 3;
   }
 }
 
@@ -315,4 +326,9 @@ footer {
   background: -o-linear-gradient(#000000,#333333); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#000000,#333333); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#000000,#333333); /* Standard syntax */
+
+  .inner {
+    top:12px;
+    font-size:32px;
+  }
 }

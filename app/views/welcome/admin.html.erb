@@ -9,6 +9,7 @@
       <!-- Featured Artwork -->
       <div class="text-wrapper">
         <%= link_to "Add new artwork", controller: "artwork", action: "new" %>
+        <%= link_to "Add new photo", controller: "photos", action: "new" %>
         <h1>Featured Artwork</h1>
         <hr style="margin-bottom:25px;">
       </div>
@@ -41,6 +42,34 @@
         <hr style="margin-bottom:25px;">
       </div>
       <%= render :partial => "shared/artwork", object: @sketch_artwork, as: 'images' %>
+
+      <!-- Featured Photos -->
+      <div class="text-wrapper">
+        <h1>Featured Photos</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/photos", object: @featured_photos, as: 'images' %>
+
+      <!-- Nature Photos -->
+      <div class="text-wrapper">
+        <h1>Nature Photos</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/photos", object: @nature_photos, as: 'images' %>
+
+      <!-- Wildlife Photos -->
+      <div class="text-wrapper">
+        <h1>Wildlife Photos</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/photos", object: @wildlife_photos, as: 'images' %>
+
+      <!-- Location Photos -->
+      <div class="text-wrapper">
+        <h1>Location Photos</h1>
+        <hr style="margin-bottom:25px;">
+      </div>
+      <%= render :partial => "shared/photos", object: @location_photos, as: 'images' %>
     </div>
   </div>
 

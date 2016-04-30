@@ -10,6 +10,16 @@ nav {
   background: -o-linear-gradient(#333333,#000000); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#333333,#000000); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#333333,#000000); /* Standard syntax */
+
+  width:100vw;
+  z-index: 3;
+
+  .inner {
+    h1 {
+      margin: 0px;
+      font-size:24px;
+    }
+  }
 }
 
 /* PREVIEW STYLES */
@@ -127,11 +137,6 @@ summary {
       transition: 0.5s ease;
     }
   }
-
-  // .active {
-  //   opacity: 1;
-  //   background: rgba(0,0,0,0.5);
-  // }
 }
 
 /* Filter Styles */
@@ -149,15 +154,18 @@ summary {
 /* MOBILE VIEW */
 
 @media screen and (max-width: 593px) {
-  .social {
-    display: none;
-  }
   body {
     overflow: auto !important;
   }
+
   #previewer {
     display: none !important;
   }
+
+  .social {
+    display: none;
+  }
+
   .artwork-wrapper, .photo-wrapper {
     .image {
       width: 80vw;

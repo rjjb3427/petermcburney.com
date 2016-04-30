@@ -42,10 +42,6 @@ $(document).ready () ->
       id = parseInt($(this).attr('id').slice(3))
       $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
       setPreviewInnerHtml()
-    # else if !(window.location.href.slice(-5) == 'admin') && (window.matchMedia("(max-width: 593px)").matches)
-    #   switch $(this).find('.art-text').hasClass('active')
-    #     when false then $(this).find('.art-text').addClass('active')
-    #     when true  then $(this).find('.art-text').removeClass('active')
 
   # KEYDOWN FUNCTIONALTY
   $(document).keydown (event) ->
