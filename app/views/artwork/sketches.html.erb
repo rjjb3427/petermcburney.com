@@ -15,8 +15,10 @@
       <div class="artwork-wrapper pos-rel">
         <%= render :partial => "shared/images", object: @sketches, as: 'images' %>
       </div>
+
       <hr>
-      <img class="pos-rel" src="../../assets/general/signature_black.png" style="width:300px;height:auto;float:right">
+      <%= link_to "Back", controller: "artwork", action: "index" %>
+      <img class="pos-rel" src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>
 

@@ -9,17 +9,18 @@
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
-        <p style="font-size:20px;">Here are a few featured images from my collection.</p>
+        <p style="font-size:20px;">Here are a few nature images that showcase the beautiful landscape of the world.</p>
         <hr style="margin-bottom:25px;">
       </div>
       <div class="photo-wrapper pos-rel">
         <%= render :partial => "shared/images", object: @nature, as: 'images' %>
       </div>
       <hr>
-      <img class="pos-rel" src="assets/general/signature_black.png" style="width:300px;height:auto;float:right">
+      <%= link_to "Back", controller: "photos", action: "index" %>
+      <img class="pos-rel" src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>
-  
+
   <!-- Footer -->
   <%= render :partial => "shared/footer" %>
 </div>

@@ -9,7 +9,7 @@
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
-        <p style="font-size:20px;">Here are a few featured images from my collection.</p>
+        <p style="font-size:20px;">Here are a few featured photographs from my collection.</p>
         <%= link_to "Nature", controller: "photos", action: "nature" %>
         <%= link_to "Wildlife", controller: "photos", action: "wildlife" %>
         <%= link_to "Locations", controller: "photos", action: "locations" %>
@@ -22,7 +22,8 @@
       </div>
 
       <hr>
-      <img class="pos-rel" src="assets/general/signature_black.png" style="width:300px;height:auto;float:right">
+      <%= link_to "Back", controller: "welcome", action: "index" %>
+      <img class="pos-rel" src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>
 
