@@ -1,14 +1,28 @@
-<main class="general main">
-  <div class="pos-rel">
-    <img class="img" src="assets/banners/lake.png"></img>
-    <h1 class="margin-none pos-abs" style="top:60px;left:20px;z-index:2;">Profile</h1>
-  </div>
-  <aside class="float-left">
-    <p class="margin-none" style="font-size:24px;margin-bottom:20px;">Hello, and welcome to my personal website! My name is Peter McBurney, and I'm a nature artist in the greater Niagara Region.</p>
-    <p class="margin-none" style="font-size:24px;margin-bottom:20px;">I've been an artist for over four decades &mdash; honing my craft through various artistic mediums.</p>
-    <p class="margin-none" style="font-size:24px;margin-bottom:20px;">The paintings that Peter McBureny creates reflect that love and respect he has for nature. They are the result of countless hours of careful observation and rendering in the studio</p>
+<main id="profile" class="general">
+  <header class="pos-rel">
+    <img src="assets/banners/lake.png"></img>
+    <h1 class="margin-none pos-abs">Profile</h1>
+  </header>
+  <aside>
+    <figure class="float-left">
+      <img src="assets/profile/abu.jpg"></img>
+      <figcaption><i>Peter next to 'Abu Simbel', an acrylic painting.</i></figcaption>
+    </figure>
+    <p>Peter McBurney is a nature artist in the greater Niagara Region.</p>
+    <p>Peter's been an artist for over four decades &mdash; honing his craft through various artistic mediums.</p>
+    <p>The paintings that Peter McBureny creates reflect that love and respect he has for nature. They are the result of countless hours of careful observation and rendering in the studio</p>
+    <p>Peter was born in Niagara Falls, Ontario in 1964. He studied at the University of Guelph, where he graduated with an Honours Bachelor of Science in Biology in 1987.</p>
+    <p>Peter also has a Masters of Science in Education from Canisius College in Buffalo, New York.</p>
   </aside>
-  <figure class="float-right">
-    <img class="frame" src="assets/profile/abu.jpg" style="width:100%;height:auto;"></img>
-  </figure>
+  <aside>
+    <figure class="float-right">
+      <img src="https://s3.amazonaws.com/petermcburneyartwork/sketches/RD.jpg"></img>
+      <figcaption><i>A sketch Peter drew of his friend and mentor, R.D. Lawrence.</i></figcaption>
+    </figure>
+    <p>A major influence in Peter’s art career is Robert Baetman. Peter drew inspiration after discovering “The World of Robert Baetman”, which inspired his to take his art more seriously. Peter has no formal training and openly admits that his painting style is based on ‘trail and error’ techniques.</p>
+    <p>Another major influence in his life has been his friendship with Canadian author and naturalist R.D. Lawrence. Peter would visit Ron and his wife Sharon at their home in Haliburton, Ontario.</p>
+    <p>There he could observe and photograph the wildlife in their care. “Ron and I would spend hours discussing animals and how they have deeply influenced our lives.” The Lawrences’ support of Peter’s artwork helped him to develop and mature as an artist.</p>
+    <p>Peter teaches high school Biology and Science at Stamford Collegiate in Niagara Falls, Ontario, where he lives with his wife Robin.</p>
+    <%= link_to "Back", controller: "welcome", action: "index" %>
+  </aside>
 </main>

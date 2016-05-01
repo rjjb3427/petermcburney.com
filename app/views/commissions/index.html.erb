@@ -1,8 +1,8 @@
-<main class="general main" style="overflow:hidden;">
-  <div class="pos-rel">
-    <img class="img" src="assets/banners/lake.png"></img>
-    <h1 class="margin-none pos-abs" style="top:60px;left:20px;z-index:2;">Commissions</h1>
-  </div>
+<main id="commisions" class="general" style="overflow:hidden;">
+  <header class="pos-rel">
+    <img src="assets/banners/lake.png"></img>
+    <h1 class="margin-none pos-abs">Commissions</h1>
+  </header>
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
@@ -31,6 +31,7 @@
         18×24"  (50.8x61cm): $420<br>
         24×36"  (61x91.4cm): $600</h4>
       </div>
+      <%= link_to "Back", controller: "welcome", action: "index" %>
     </div>
   </div>
 </main>

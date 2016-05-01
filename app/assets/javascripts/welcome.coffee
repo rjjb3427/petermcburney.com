@@ -1,13 +1,30 @@
 $(document).ready () ->
-  id = 0
-  numArt = $('.image').length
+  curr = ''
+  right = ''
+  left = ''
+
+  console.log $('.image').first().attr('id')
+  console.log $('.image').last().attr('id')
 
   # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->
-    $("#previewer .title").html($('#img' + id).find('.title').html())
-    $("#previewer .media").html($('#img' + id).find('.media').html() + ',')
-    $("#previewer .size").html($('#img' + id).find('.size').html())
-    $("#previewer .price").html($('#img' + id).find('.price').html())
+    $("#previewer .title").html(curr.find('.title').html())
+    $("#previewer .media").html(curr.find('.media').html() + ',')
+    $("#previewer .size").html(curr.find('.size').html())
+    $("#previewer .price").html(curr.find('.price').html())
+
+  # Update values and update src images
+  updateValues = (value, edge) ->
+    if value.attr('id') == undefined && edge == 'first'
+      curr = $('.image').first()
+    else if value.attr('id') == undefined && edge == 'last'
+      curr = $('.image').last()
+    else
+      curr = value
+    console.log curr.attr('id')
+    right = curr.parent().next().find(".image")
+    left = curr.parent().prev().find(".image")
+    $('#previewer figure img').attr 'src', curr.css("background").match('"(.*)"')[1]
 
   # Update the previewer when an input in changed
   $('#edit input, #new input').bind 'input', ->
@@ -19,28 +36,22 @@ $(document).ready () ->
 
   # ARROW FUNCTIONALITY
   $(document).on 'click','#arrow-right', (e) ->
-    id += 1;
-    id = 0 if id == numArt
-    $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    updateValues(right, 'first')
     setPreviewInnerHtml()
 
   $(document).on 'click','#arrow-left', (e) ->
-    id -= 1;
-    id = numArt - 1 if id == -1
-    $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+    updateValues(left, 'last')
     setPreviewInnerHtml()
 
   $(document).on 'click','#x', (e) ->
     $('body').css 'overflow': 'auto'
     $('summary').css 'display': 'none'
 
-
   $(document).on 'click','.image', (e) ->
     if !(window.location.href.slice(-5) == 'admin') && (!window.matchMedia("(max-width: 593px)").matches)
       $('body').css 'overflow': 'hidden'
       $('summary').css 'display': 'block'
-      id = parseInt($(this).attr('id').slice(3))
-      $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+      updateValues($(this),'')
       setPreviewInnerHtml()
 
   # KEYDOWN FUNCTIONALTY
@@ -51,13 +62,9 @@ $(document).ready () ->
           $('body').css 'overflow': 'auto'
           $('summary').css 'display': 'none'
         when 37
-          id -= 1
-          id = numArt - 1 if id == -1
-          $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+          updateValues(left, 'last')
           setPreviewInnerHtml()
         when 39
-          id += 1
-          id = 0 if id == numArt
-          $('#previewer figure img').attr 'src', $('#img' + id).css("background").match('"(.*)"')[1]
+          updateValues(right, 'first')
           setPreviewInnerHtml()
     return

@@ -3,12 +3,8 @@
 
 # Ignore all sensitive files
 .env
-#app/controllers/artwork_controller.rb
-#app/controllers/welcome_controller.rb
 config/database.yml
 config/secrets.yml
-#config/environments/production.rb
-#config/environments/development.rb
 
 # Ignore all logfiles and tempfiles.
 /log/*
