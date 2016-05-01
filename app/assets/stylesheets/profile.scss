@@ -33,3 +33,35 @@ $black-text-shadow: -1px -1px 10px rgba(0,0,0,0), 1px -1px 10px rgba(0,0,0,.5), 
     }
   }
 }
+
+/* SMALL SCREEN AND TABLET VIEW */
+
+@media screen and (max-width: 906px) {
+  #profile {
+    aside {
+      p {
+        font-size: 24px;
+      }
+    }
+    figure {
+      figcaption {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/* MOBILE VIEW */
+
+@media screen and (max-width: 593px) {
+  #profile {
+    aside {
+      p {
+        font-size: 20px;
+      }
+    }
+    figure {
+      display: none;
+    }
+  }
+}
