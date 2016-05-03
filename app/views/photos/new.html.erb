@@ -16,11 +16,17 @@
               <%= f.text_field :title %>
             </section>
 
-            <!-- s3 -->
+            <!-- URL -->
             <section class="float-left">
+              <h4><%= f.label :image_url %></h4>
+              <%= f.text_field :image_url %>
+            </section>
+
+            <!-- s3 -->
+            <!-- <section class="float-left">
               <h4><%= f.label :s3 %></h4>
               <%= f.file_field :s3 %>
-            </section>
+            </section> -->
 
             <!-- Image Type -->
             <section class="float-left">
