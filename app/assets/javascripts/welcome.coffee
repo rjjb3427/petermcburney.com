@@ -2,7 +2,6 @@ $(document).ready ->
   interval = 1
 
   $('#instafeed').scroll ->
-    console.log('scroll yo')
 
   animate = () ->
     if interval == 5
@@ -14,16 +13,6 @@ $(document).ready ->
 
   setInterval(animate, 2000)
 
-  $(window).scroll ->
-    $('.hideme').each (i) ->
-      bottom_of_object = $(this).offset().top
-      bottom_of_window = $(window).scrollTop() + $(window).height()
-      if bottom_of_window > bottom_of_object
-        $(this).animate { 'opacity': '1' }, 500
-      return
-    return
-  return
-
 $(document).ready () ->
   curr = ''
   right = ''
@@ -31,9 +20,12 @@ $(document).ready () ->
 
   # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->
+    $("#previewer span").each ->
+      $(this).html('')
     $("#previewer .title").html(curr.find('.title').html())
-    $("#previewer .media").html(curr.find('.media').html() + ',')
-    $("#previewer .size").html(curr.find('.size').html())
+    $("#previewer .media").html(curr.find('.media').html())
+    if curr.find('.size').html()
+      $("#previewer .size").html(',' + curr.find('.size').html())
     $("#previewer .price").html(curr.find('.price').html())
 
   # Update values and update src images
@@ -47,7 +39,7 @@ $(document).ready () ->
     console.log curr.attr('id')
     right = curr.parent().next().find(".image")
     left = curr.parent().prev().find(".image")
-    $('#previewer figure img').attr 'src', curr.css("background").match('"(.*)"')[1]
+    $('#previewer figure #image').attr 'src', curr.css("background").match('"(.*)"')[1]
 
   # Update the previewer when an input in changed
   $('#edit input, #new input').bind 'input', ->

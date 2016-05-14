@@ -41,12 +41,12 @@ summary {
   figure {
     margin: 0px;
     position: relative;
-    min-height: 500px;
-    height: 90%;
-    top: 40px;
-    display: inline-block;
+    max-width: 900px;
+    width: 90%;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    margin-bottom: 20px;
+    transform: translate(-50%,-50%);
 
     p {
       font-weight: 500;
@@ -55,38 +55,37 @@ summary {
     img {
       position: relative;
       z-index: 10;
-      width: auto;
-      height: 100%;
+      width: 100%;
+      height: auto;
     }
 
     figcaption {
+      background: rgba(0,0,0,0.5);
+      bottom: 6px;
+      color: #ffffff;
+      left: 0px;
       padding: 0px 20px;
       position: absolute;
-      bottom: 0px;
-      left: 0px;
       z-index: 20;
-      background: rgba(0,0,0,0.5);
-      color: #ffffff !important;
       @include calc(width, "100% - 40px");
-      margin: 0 auto;
-      overflow: auto;
     }
   }
 
   #x {
+    position: relative;
     top: 15px;
-    right: 5vw;
+    right: 15px;
     width: 30px;
     height: auto;
   }
 
   #arrow-left, #arrow-right {
     width: 80px;
-    height: auto;
-    top: 250px;
+    position: absolute;
+    top: 40%;
   }
-  #arrow-left {left: 20px;}
-  #arrow-right {right: 20px;}
+  #arrow-left {left: 10px;}
+  #arrow-right {right: 10px;}
   #x,#arrow-left,#arrow-right {opacity: 0.7;position: absolute;cursor: pointer;}
   #x:hover, #arrow-left:hover, #arrow-right:hover {opacity: 1}
 }
