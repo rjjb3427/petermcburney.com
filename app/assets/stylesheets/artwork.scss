@@ -44,9 +44,9 @@ summary {
     max-width: 900px;
     width: 90%;
     left: 50%;
-    top: 50%;
+    top: 20px;
     margin-bottom: 20px;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
 
     p {
       font-weight: 500;

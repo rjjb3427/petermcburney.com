@@ -9,14 +9,14 @@
   <div class="container">
     <div class="inner">
       <div class="text-wrapper">
-        <p style="font-size:20px;">These images showcase the .</p>
+        <p style="font-size:20px;">These images showcase the some of the wildlife I have photographed in recent years.</p>
         <hr style="margin-bottom:25px;">
       </div>
       <div class="photo-wrapper pos-rel">
         <%= render :partial => "shared/images", object: @wildlife, as: 'images' %>
       </div>
       <hr>
-      <%= link_to "Back", controller: "photos", action: "index" %>
+      <%= link_to "Photos", controller: "photos", action: "index" %>
       <img class="pos-rel" src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right">
     </div>
   </div>

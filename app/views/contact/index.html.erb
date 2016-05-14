@@ -6,30 +6,31 @@
 
   <div class="container">
     <div class="inner">
-      <%= form_for :photo, url: photos_path, html: { multipart: true } do |f| %>
-        <!-- Subject -->
+
+      <div class="text-wrapper">
+        <p>If you have any inquiries, you may contact me here at <a href="mailto:petermcburney@gmail.com" target="_top">petermcburney@gmail.com</a>.</p>
+      </div>
+
+      <!-- <%= form_for :photo, url: photos_path, html: { multipart: true } do |f| %>
         <section>
           <h4><%= f.label :subject %></h4>
           <%= f.text_field :subject %>
         </section>
 
-        <!-- Email -->
         <section>
           <h4><%= f.label :email %></h4>
           <%= f.text_field :email %>
         </section>
 
-        <!-- Message -->
         <section>
           <h4><%= f.label :message %></h4>
           <%= f.text_area :email %>
         </section>
 
-        <!-- Submit message -->
         <section>
           <h4>Send message</h4>
           <span>Submit</span>
-        </section>
+        </section> -->
       <% end %>
       <%= link_to "Home", controller: "welcome", action: "index" %>
     </div>
