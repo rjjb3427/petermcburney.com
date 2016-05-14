@@ -38,8 +38,11 @@ body {
   align-items: center;
 
   a {
-    width: 320px !important;
+    /* hack for safari */
+    min-width: 320px !important;
+    max-width: 320px !important;
     height: auto;
+    display: inline-block;
   }
 }
 
