@@ -3,9 +3,6 @@ $(document).ready () ->
   right = ''
   left = ''
 
-  console.log $('.image').first().attr('id')
-  console.log $('.image').last().attr('id')
-
   # Set previewer inner html based on item selected
   setPreviewInnerHtml = () ->
     $("#previewer .title").html(curr.find('.title').html())
