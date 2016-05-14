@@ -1,5 +1,9 @@
 $(document).ready ->
   interval = 1
+
+  $('#instafeed').scroll ->
+    console.log('scroll yo')
+
   animate = () ->
     if interval == 5
       $('#instafeed').animate {scrollLeft:'0px'}, 1000
