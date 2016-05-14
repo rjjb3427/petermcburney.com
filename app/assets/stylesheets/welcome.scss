@@ -36,6 +36,11 @@ body {
   -webkit-align-items: center;
   display: flex;
   align-items: center;
+
+  a {
+    width: 320px !important;
+    height: auto;
+  }
 }
 
 /* GENERAL STYLES */

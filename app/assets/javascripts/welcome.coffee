@@ -36,10 +36,10 @@ $(document).ready () ->
       curr = $('.image').last()
     else
       curr = value
-    console.log curr.attr('id')
     right = curr.parent().next().find(".image")
     left = curr.parent().prev().find(".image")
-    $('#previewer figure #image').attr 'src', curr.css("background").match('"(.*)"')[1]
+
+    $('#previewer figure #image').attr 'src', curr.prop('style')['background'].match(/\(([^)]+)\)/)[1].replace(/\"/g, "")
 
   # Update the previewer when an input in changed
   $('#edit input, #new input').bind 'input', ->
