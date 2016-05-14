@@ -15,28 +15,44 @@
         <hr>
         <p class="margin-none" style="font-size:24px;margin-bottom:20px;">Free worldwide shipping on commissions. For prices in other currencies please use the currency converter <a href="http://www.xe.com/">here</a>.</p>
         <p class="margin-none" style="font-size:24px;margin-bottom:20px;">Sizes are in inches (cm). Prices vary based on size, style and medium as listed below.  Prices may vary depending on the number of animals or work required.</p>
-        <h3>Pencil Portraits (Add $50 per additional animal):</h3>
-        <h4>8×10" (20.3x25.4cm): Single Subject $90<br>
-        9×12" (22.9X30.5cm): Single Subject $105<br>
-        11×14" (27.9x43.2cm): Single Subject $125</h4>
-        <h3>Copic Marker and Coloured Pencil Portraits:</h3>
-        <h4>8×10" (20.3x25.4cm): Single Subject $135<br>
-        9×12" (22.9X30.5cm): Single Subject $160<br>
-        11×14" (27.9x43.2cm): Single Subject $190</h4>
-        <p class="margin-none" style="font-size:24px;margin-bottom:20px;">Would you like more info on having a portrait painted? Contact me!</p>
-        <h3>Acrylic Paintings:</h3>
-        <h4>8×10" (20.3x25.4cm): $180<br>
-        11×14"  (27.9x43.2cm): $250<br>
-        16×20" (40.6x50.8cm) : $360<br>
-        18×24"  (50.8x61cm): $420<br>
-        24×36"  (61x91.4cm): $600</h4>
-      </div>
-      <section></section>
-      <div>
-        <section>This is a test paragraph to make sure the sass is working.</section>
-      </div>
 
-      <%= link_to "Back", controller: "welcome", action: "index" %>
+        <table>
+          <tr>
+            <th>Pencil Portraits</th>
+            <th>Copic Marker Portraits</th>
+            <th>Acrylic Paintings</th>
+          </tr>
+          <tr>
+            <td>8×10" (20.3x25.4cm): Single Subject <b>$90</b></td>
+            <td>8×10" (20.3x25.4cm): Single Subject <b>$135</b></td>
+            <td>8×10" (20.3x25.4cm): <b>$180</b></td>
+          </tr>
+          <tr>
+            <td>9×12" (22.9X30.5cm): Single Subject <b>$105</b></td>
+            <td>9×12" (22.9X30.5cm): Single Subject <b>$160</b></td>
+            <td>11×14" (27.9x43.2cm): <b>$250</b></td>
+          </tr>
+          <tr>
+            <td>8×10" (20.3x25.4cm): Single Subject <b>$135</b></td>
+            <td>11×14" (27.9x43.2cm): Single Subject <b>$190</b></td>
+            <td>16×20" (40.6x50.8cm) : <b>$360</b></td>
+          </tr>
+          <tr>
+            <td> / </td>
+            <td> / </td>
+            <td>18×24" (50.8x61cm): <b>$420</b></td>
+          </tr>
+          <tr>
+            <td> / </td>
+            <td> / </td>
+            <td>24×36" (61x91.4cm): <b>$600</b></td>
+          </tr>
+        </table>
+
+        <p style="font-size:24px;margin:20px 0px;">Would you like more info on having a portrait painted? Contact me
+        <%= link_to "here", controller: "contact", action: "index" %>.</p>
+      </div>
+      <%= link_to "Home", controller: "welcome", action: "index" %>
     </div>
   </div>
 </main>

@@ -1,8 +1,6 @@
 $(document).ready ->
   interval = 1
 
-  $('#instafeed').scroll ->
-
   animate = () ->
     if interval == 5
       $('#instafeed').animate {scrollLeft:'0px'}, 1000
@@ -11,7 +9,7 @@ $(document).ready ->
       $('#instafeed').animate {scrollLeft:1280*interval+'px'}, 750
       interval += 1
 
-  setInterval(animate, 2000)
+  setInterval(animate, 10000)
 
 $(document).ready () ->
   curr = ''
