@@ -1,3 +1,25 @@
+$(document).ready ->
+  interval = 1
+  animate = () ->
+    if interval == 5
+      $('#instafeed').animate {scrollLeft:'0px'}, 1000
+      interval = 1
+    else
+      $('#instafeed').animate {scrollLeft:1280*interval+'px'}, 750
+      interval += 1
+
+  setInterval(animate, 2000)
+
+  $(window).scroll ->
+    $('.hideme').each (i) ->
+      bottom_of_object = $(this).offset().top
+      bottom_of_window = $(window).scrollTop() + $(window).height()
+      if bottom_of_window > bottom_of_object
+        $(this).animate { 'opacity': '1' }, 500
+      return
+    return
+  return
+
 $(document).ready () ->
   curr = ''
   right = ''
