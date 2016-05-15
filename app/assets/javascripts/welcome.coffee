@@ -2,7 +2,9 @@ $(document).ready ->
   interval = 1
 
   animate = () ->
-    if interval == 5
+    if $('#instafeed:hover').length != 0
+      return
+    else if interval == 5
       $('#instafeed').animate {scrollLeft:'0px'}, 1000
       interval = 1
     else
