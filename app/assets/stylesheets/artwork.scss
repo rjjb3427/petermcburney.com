@@ -182,6 +182,23 @@ summary {
 @media screen and (max-width: 593px) {
   body {
     overflow: auto !important;
+
+    header h1 {
+      font-weight: 500 !important;
+    }
+
+    #landing {
+      h1, h2 {
+        font-weight: 500 !important;
+      }
+      h1 {
+        letter-spacing: 3px !important;
+      }
+
+      main a {
+        font-weight: bold !important;
+      }
+    }
   }
 
   #previewer {
