@@ -1,0 +1,56 @@
+.general
+  /! Nav
+  = render :partial => "shared/nav", locals: {title: 'Admin'}
+  /! Art grid system
+  .container
+    .inner
+      /! Featured Artwork
+      .text-wrapper
+        a href="https://console.aws.amazon.com/s3/home?region=us-west-2#&bucket=petermcburneyartwork&prefix="  Upload images here.
+        = link_to "Add new artwork", controller: "artwork", action: "new"
+        = link_to "Add new photo", controller: "photos", action: "new"
+        h1 Featured Artwork
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/artwork", object: @featured_artwork, as: 'images'
+      /! For Sale
+      .text-wrapper
+        h1 For Sale
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/artwork", object: @for_sale_artwork, as: 'images'
+      /! Paintings
+      .text-wrapper
+        h1 Paintings
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/artwork", object: @painting_artwork, as: 'images'
+      /! Copic
+      .text-wrapper
+        h1 Copic
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/artwork", object: @copic_artwork, as: 'images'
+      /! Sketches
+      .text-wrapper
+        h1 Sketches
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/artwork", object: @sketch_artwork, as: 'images'
+      /! Featured Photos
+      .text-wrapper
+        h1 Featured Photos
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/photos", object: @featured_photos, as: 'images'
+      /! Nature Photos
+      .text-wrapper
+        h1 Nature Photos
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/photos", object: @nature_photos, as: 'images'
+      /! Wildlife Photos
+      .text-wrapper
+        h1 Wildlife Photos
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/photos", object: @wildlife_photos, as: 'images'
+      /! Location Photos
+      .text-wrapper
+        h1 Location Photos
+        hr style="margin-bottom:25px;" /
+      = render :partial => "shared/photos", object: @location_photos, as: 'images'
+  /! Footer
+  = render :partial => "shared/footer"

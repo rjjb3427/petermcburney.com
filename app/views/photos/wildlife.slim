@@ -1,0 +1,18 @@
+.general
+  /! Image previewer
+  = render 'shared/preview'
+  /! Nav
+  = render :partial => "shared/nav", locals: {title: 'Wildlife Photos'}
+  /! Art grid system
+  .container
+    .inner
+      .text-wrapper
+        p style="font-size:20px;"  These images showcase the some of the wildlife I have photographed in recent years.
+        hr style="margin-bottom:25px;" /
+      .photo-wrapper.pos-rel
+        = render :partial => "shared/images", object: @wildlife, as: 'images'
+      hr/
+      = link_to "Photos", controller: "photos", action: "index"
+      img.pos-rel src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right" /
+  /! Footer
+  = render :partial => "shared/footer"

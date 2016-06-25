@@ -1,0 +1,70 @@
+main#edit.general
+  = render :partial => "shared/nav", locals: {title: 'Edit Photo'}
+  .container
+    .inner
+      h1
+        | Parameters
+      hr
+      = form_for :photo, url: photo_path(@photo), method: :patch do |f|
+        div[style="overflow:hidden;"]
+          section.float-left
+            h4
+              = f.label :title
+            = f.text_field :title
+          section.float-left
+            h4
+              = f.label :image_url
+            = f.text_field :image_url
+          section.float-left
+            h4
+              = f.label :image_type
+            p.float-left
+              | Nature
+              br
+              = f.radio_button :image_type, "nature"
+            p.float-left
+              | Wildlife
+              br
+              = f.radio_button :image_type, "wildlife"
+            p.float-left
+              | Locations
+              br
+              = f.radio_button :image_type, "locations"
+          section.float-left
+            h4
+              = f.label :location
+            = f.text_field :location
+          section.float-left
+            h4
+              = f.label :featured
+            p.float-left
+              | True
+              br
+              = f.radio_button :featured, "true"
+            p.float-left
+              | False
+              br
+              = f.radio_button :featured, "false"
+          section.float-left
+            h4
+              = f.label :order
+            = f.text_field :order, :class => 'order'
+          .float-left
+            = f.submit
+            br
+            = link_to 'Destroy', photo_path(@photo), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }
+      h1
+        | Preview
+      hr
+      figure.center-horizontal
+        |  <img src="
+        = @photo.image_url
+        | ">
+        figcaption
+          h2.title
+            = @photo.title
+          hr
+          p
+            span.media
+              = @photo.location
+  = render :partial => "shared/footer"

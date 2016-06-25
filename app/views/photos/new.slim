@@ -1,0 +1,70 @@
+main#new.general
+  /! Nav
+  = render :partial => "shared/nav", locals: {title: 'Add new photo'}
+  .container
+    .inner
+      h1 Parameters
+      hr/
+      div style="overflow:hidden;"
+        = form_for :photo, url: photos_path, html: { multipart: true } do |f|
+          div style="overflow:hidden;"
+            /! Title
+            section.float-left
+              h4= f.label :title
+              = f.text_field :title
+            /! URL
+            section.float-left
+              h4= f.label :image_url
+              = f.text_field :image_url
+            /! Image Type
+            section.float-left
+              h4= f.label :image_type
+              p.float-left
+                | Nature
+                br/
+                = f.radio_button :image_type, "nature"
+              p.float-left
+                | Wildlife
+                br/
+                = f.radio_button :image_type, "wildlife"
+              p.float-left
+                | Locations
+                br/
+                = f.radio_button :image_type, "locations"
+            /! Location
+            section.float-left
+              h4= f.label :location
+              = f.text_field :location
+            /! Featured
+            section.float-left
+              h4= f.label :featured
+              p.float-left
+                | True
+                br/
+                = f.radio_button :featured, "true"
+              p.float-left
+                | False
+                br/
+                = f.radio_button :featured, "false"
+            /! Order
+            section.float-left
+              h4= f.label :order
+              = f.text_field :order, :class => 'order'
+            /! Submit
+            .float-left
+              = f.submit
+      /! New Image Previewer
+      /! TODO: make this a partial
+      h1 Preview
+      hr/
+      figure.center-horizontal
+        img src="https://s3.amazonaws.com/petermcburneyartwork/paintings/breaching_orca.jpg" /
+        figcaption
+          h2.title
+          hr/
+          p
+            span.media
+            | ,
+            span.size
+            b style="float:right;"
+              span.price

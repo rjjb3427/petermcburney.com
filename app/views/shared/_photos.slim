@@ -1,0 +1,22 @@
+.photo-wrapper.pos-rel
+  - images.each_with_index do |image, index|
+    .float-left
+      = link_to edit_photo_path(image) do
+        .image.margin-left-large id="img#{index}" style=("background:url(#{image.image_url});background-size:cover;background-position: center center;")
+          .art-text
+            h3.title.pos-abs.col-white style=("left:5px;margin:5px 0px;opacity:1 !important") = image.title
+            hr.pos-abs style="width:100%;top:30px;color:white;" /
+            p.media.pos-rel.col-white style=("top:25px;left:5px;opacity:1 !important")
+              - if image.respond_to?(:media)
+                = image.media
+              - elsif image.respond_to?(:location)
+                = image.location
+            - if image.respond_to?(:size)
+              p.size.pos-rel.col-white style=("top:25px;left:5px;opacity:1 !important")
+                = image.size
+            - if image.respond_to?(:for_sale)
+              - if image.for_sale
+                p.price.pos-rel.col-white style=("top:25px;left:5px;opacity:1 !important")
+                  | $ #{image.price}
+              - else
+                p.price.pos-rel.col-white style=("top:25px;left:5px;opacity:1 !important")  SOLD

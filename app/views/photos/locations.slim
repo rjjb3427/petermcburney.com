@@ -1,0 +1,15 @@
+.general
+  = render 'shared/preview'
+  = render :partial => "shared/nav", locals: {title: 'Locations'}
+  .container
+    .inner
+      .text-wrapper
+        p[style="font-size:20px;"]
+          | Here are a few images of locations and landmarks taken throughout the years.
+        hr[style="margin-bottom:25px;"]
+      .photo-wrapper.pos-rel
+        = render :partial => "shared/images", object: @locations, as: 'images'
+      hr
+      = link_to "Photos", controller: "photos", action: "index"
+      img.pos-rel[src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right"]
+  = render :partial => "shared/footer"

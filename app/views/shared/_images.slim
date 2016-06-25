@@ -1,0 +1,20 @@
+- images.each_with_index do |image, index|
+  .float-left
+    .image.margin-left-large id="img#{index}" style=("background:url(#{image.image_url});background-size:cover;background-position: center center;")
+      .art-text
+        h3.title.pos-abs= image.title
+        hr.pos-abs/
+        p.media.pos-rel
+          - if image.respond_to?(:media)
+            = image.media
+          - elsif image.respond_to?(:location)
+            = image.location
+        - if image.respond_to?(:size)
+          p.size.pos-rel
+            = image.size
+        - if image.respond_to?(:for_sale)
+          - if image.for_sale
+            p.price.pos-rel
+              | $ #{image.price}
+          - else
+            p.price.pos-rel SOLD
