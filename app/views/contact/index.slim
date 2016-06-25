@@ -1,0 +1,18 @@
+body
+  main#contact.general
+    header.pos-rel
+      img src="assets/banners/sunset.png" /
+      h1.margin-none.pos-abs Contact
+    .container
+      .inner
+        .text-wrapper
+          p
+            | If you have any inquiries, you may contact me here at
+            = succeed "." do
+              a href="mailto:petermcburney@gmail.com" target="_top"  petermcburney@gmail.com
+        = link_to "Home", controller: "welcome", action: "index"
+    .error
+      main
+        h2 Error
+        p We're sorry, but an error has occured during sending your email.
+        button Okay

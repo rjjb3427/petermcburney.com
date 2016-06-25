@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:index]
 
   def index
+    # Featured collections
     @featured_artwork = Artwork.where(:featured => true).order(:order)
     @featured_photos = Photo.where(:featured => true).order(:order)
   end
