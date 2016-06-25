@@ -1,0 +1,89 @@
+main#new.general
+  = render :partial => "shared/nav", locals: {title: 'Add new artwork'}
+  .container
+    .inner
+      h1
+        | Parameters
+      hr
+      div[style="overflow:hidden;"]
+        = form_for :artwork, url: artwork_index_path, html: { multipart: true } do |f|
+          div[style="overflow:hidden;"]
+            section.float-left
+              h4
+                = f.label :title
+              = f.text_field :title
+            section.float-left
+              h4
+                = f.label :image_url
+              = f.text_field :image_url
+            section.float-left
+              h4
+                = f.label :artwork_type
+              p.float-left
+                | Painting
+                br
+                = f.radio_button :artwork_type, "painting"
+              p.float-left
+                | Copic
+                br
+                = f.radio_button :artwork_type, "copic"
+              p.float-left
+                | Sketch
+                br
+                = f.radio_button :artwork_type, "sketch"
+            section.float-left
+              h4
+                = f.label :media
+              = f.text_field :media
+            section.float-left
+              h4
+                = f.label :size
+              = f.text_field :size
+            section.float-left
+              h4
+                = f.label :for_sale
+              p.float-left
+                | True
+                br
+                = f.radio_button :for_sale, "true"
+              p.float-left
+                | False
+                br
+                = f.radio_button :for_sale, "false"
+            section.float-left
+              h4
+                = f.label :price
+              = f.text_field :price
+            section.float-left
+              h4
+                = f.label :featured
+              p.float-left
+                | True
+                br
+                = f.radio_button :featured, "true"
+              p.float-left
+                | False
+                br
+                = f.radio_button :featured, "false"
+            section.float-left
+              h4
+                = f.label :order
+              = f.text_field :order, :class => 'order'
+            .float-left
+              = f.submit
+      hr
+      h1
+        | Preview
+      hr
+      figure.center-horizontal
+        img[src="https://s3.amazonaws.com/petermcburneyartwork/paintings/breaching_orca.jpg"]
+        figcaption
+          h2.title
+          hr
+          p
+            span.media
+            | ,
+            span.size
+            b[style="float:right;"]
+              span.price
+  = render :partial => "shared/footer"

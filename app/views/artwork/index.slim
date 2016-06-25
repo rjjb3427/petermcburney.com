@@ -1,0 +1,19 @@
+.general
+  = render 'shared/preview'
+  = render :partial => "shared/nav", locals: {title: 'Featured Artwork'}
+  .container
+    .inner
+      .text-wrapper
+        p[style="font-size:20px;"]
+          | Here are a few select artwork pieces from my collection.
+        = link_to "For Sale", controller: "artwork", action: "for_sale"
+        = link_to "Copic Markers", controller: "artwork", action: "copic"
+        = link_to "Paintings", controller: "artwork", action: "paintings"
+        = link_to "Sketches", controller: "artwork", action: "sketches"
+        hr[style="margin-bottom:25px;"]
+      .artwork-wrapper.pos-rel
+        = render :partial => "shared/images", object: @artwork, as: 'images'
+      hr
+      = link_to "Home", controller: "welcome", action: "index"
+      img.pos-rel[src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right"]
+  = render :partial => "shared/footer"

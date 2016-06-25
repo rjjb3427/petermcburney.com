@@ -1,0 +1,15 @@
+.general
+  = render 'shared/preview'
+  = render :partial => "shared/nav", locals: {title: 'Paintings'}
+  .container
+    .inner
+      .text-wrapper
+        p[style="font-size:20px;"]
+          | The images below are some of the paintings I have done throughout my career as an artist.
+        hr[style="margin-bottom:25px;"]
+      .artwork-wrapper.pos-rel
+        = render :partial => "shared/images", object: @paintings, as: 'images'
+      hr
+      = link_to "Artwork", controller: "artwork", action: "index"
+      img.pos-rel[src="https://s3.amazonaws.com/petermcburneyartwork/general/signature_black.png" style="width:300px;height:auto;float:right"]
+  = render :partial => "shared/footer"

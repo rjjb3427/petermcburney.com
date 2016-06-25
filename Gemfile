@@ -8,6 +8,8 @@ gem 'rails_12factor', group: :production
 gem 'aws-sdk'
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 
+gem 'slim-rails'
+
 gem 'mail_form'
 gem 'simple_form'
 

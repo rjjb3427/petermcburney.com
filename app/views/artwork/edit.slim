@@ -1,0 +1,95 @@
+main#edit.general
+  = render :partial => "shared/nav", locals: {title: 'Edit Artwork'}
+  .container
+    .inner
+      h1
+        | Parameters
+      hr
+      = form_for :artwork, url: artwork_path(@artwork), method: :patch do |f|
+        div[style="overflow:hidden;"]
+          section.float-left
+            h4
+              = f.label :title
+            = f.text_field :title
+          section.float-left
+            h4
+              = f.label :image_url
+            = f.text_field :image_url
+          section.float-left
+            h4
+              = f.label :artwork_type
+            p.float-left
+              | Painting
+              br
+              = f.radio_button :artwork_type, "painting"
+            p.float-left
+              | Copic
+              br
+              = f.radio_button :artwork_type, "copic"
+            p.float-left
+              | Sketch
+              br
+              = f.radio_button :artwork_type, "sketch"
+          section.float-left
+            h4
+              = f.label :media
+            = f.text_field :media
+          section.float-left
+            h4
+              = f.label :size
+            = f.text_field :size
+          section.float-left
+            h4
+              = f.label :for_sale
+            p.float-left
+              | True
+              br
+              = f.radio_button :for_sale, "true"
+            p.float-left
+              | False
+              br
+              = f.radio_button :for_sale, "false"
+          section.float-left
+            h4
+              = f.label :price
+            = f.text_field :price
+          section.float-left
+            h4
+              = f.label :featured
+            p.float-left
+              | True
+              br
+              = f.radio_button :featured, "true"
+            p.float-left
+              | False
+              br
+              = f.radio_button :featured, "false"
+          section.float-left
+            h4
+              = f.label :order
+            = f.text_field :order, :class => 'order'
+          .float-left
+            = f.submit
+            br
+            = link_to 'Destroy', artwork_path(@artwork), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }
+      h1
+        | Preview
+      hr
+      figure.center-horizontal
+        |  <img src="
+        = @artwork.image_url
+        | ">
+        figcaption
+          h2.title
+            = @artwork.title
+          hr
+          p
+            span.media
+              = @artwork.media
+            | ,
+            span.size
+              = @artwork.size
+            b[style="float:right;"]
+              span.price
+                = @artwork.price
+  = render :partial => "shared/footer"
