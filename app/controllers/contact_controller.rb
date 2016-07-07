@@ -1,3 +1,7 @@
+# TODO:
+# add contact form and submit emails
+# to petermcburney@gmail.com
+
 class ContactController < ApplicationController
   def new
     @contact = Contact.new

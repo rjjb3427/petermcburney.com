@@ -3,7 +3,7 @@ class ArtworkController < ApplicationController
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:index, :copic, :sketches, :paintings, :for_sale]
 
   # ***************************
-  # Read Methods
+  # Create Methods
   # ***************************
 
   # Instantiate a new artwork with default parameters
@@ -55,6 +55,7 @@ class ArtworkController < ApplicationController
   # Update Methods
   #***************************
 
+  # Find artwork to be updated
   def edit
     @artwork = Artwork.find(params[:id])
   end
