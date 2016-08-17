@@ -1,6 +1,7 @@
 main#landing.general
   /! Image previewer
   = render 'shared/preview'
+  
   /! Main section
   main
     section
@@ -28,6 +29,7 @@ main#landing.general
           a href="https://www.linkedin.com/in/peter-mcburney-a3335984?authType=NAME_SEARCH&authToken=y0cJ&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A299465607%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1458945967540%2Ctas%3Apet"
             img.icon src="assets/social/li.png" style="width:28px;height:auto;" /
     img.img src="https://s3.amazonaws.com/petermcburneyartwork/copic/numa.jpg" /
+    
     /! Featured Artwork
     .pos-rel
       img.img src="assets/banners/abu.png" /
@@ -36,6 +38,7 @@ main#landing.general
       .inner
         .artwork-wrapper.pos-rel
           = render :partial => "shared/images", object: @featured_artwork, as: 'images'
+          
     /! Featured Photography
     .pos-rel
       img.img src="assets/banners/falls.png" /
@@ -44,21 +47,24 @@ main#landing.general
       .inner
         .photo-wrapper.pos-rel
           = render :partial => "shared/images", object: @featured_photos, as: 'images'
+          
     /! Instagram Feed
     .pos-rel
       img.img src="assets/banners/owl.png" /
       h1.margin-none.pos-abs style="top:5vw;z-index:2;width:100%;text-align:center;"  Instagram Feed
+      
     /! Instafeed.js
     #instafeed
     javascript:
-      | var userFeed = new Instafeed({
-        | get: 'user',
-        | userId: '#{ENV['INSTA_USER']}',
-        | accessToken: '#{ENV['INSTA_ACCESS']}',
-        | resolution: 'low_resolution',
-        | useHttp: true
-      | });
-      | userFeed.run();
+      var userFeed = new Instafeed({
+         get: 'user',
+         userId: '975290265',
+         accessToken: '975290265.f58ce38.06b4756f34cb4b43bcb8c4a1b8195924',
+         resolution: 'low_resolution',
+         useHttp: true
+       });
+       userFeed.run();
+       
     /! Footer
     footer style="height:auto;"
       .pos-rel
