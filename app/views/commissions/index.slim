@@ -12,10 +12,7 @@ body
         .text-wrapper
           h2 Price List
           hr/
-          p.margin-none
-            | Free worldwide shipping on commissions. For prices in other currencies please use the currency converter
-            = succeed "." do
-              a href="http://www.xe.com/"  here
+          p.margin-none Free worldwide shipping on commissions. For prices in other currencies please use the currency converter <a href="http://www.xe.com/">here</a>.
           p.margin-none Sizes are in inches (cm). Prices vary based on size, style and medium as listed below.  Prices may vary depending on the number of animals or work required.
           table
             tr
@@ -68,7 +65,5 @@ body
               td
                 | 24×36" (61x91.4cm):
                 b $600
-          p style=("margin:20px 0px;")
-            | Would you like more info on having a piece commissioned? Contact me
-            | \#{link_to "here", controller: "contact", action: "index"}.
+          p style=("margin:20px 0px;") Would you like more info on having a piece commissioned? Contact me #{link_to "here", controller: "contact", action: "index"}.
         = link_to "Home", controller: "welcome", action: "index"
