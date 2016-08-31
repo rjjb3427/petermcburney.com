@@ -1,3 +1,8 @@
+###
+# Artwork controller
+# Coded by: Andrew McBurney
+###
+
 class ArtworkController < ApplicationController
   # basic authentication for all pages except index, copic, sketches, paintings, and for_sale (public facing views)
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:index, :copic, :sketches, :paintings, :for_sale]

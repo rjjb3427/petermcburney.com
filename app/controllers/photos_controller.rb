@@ -1,3 +1,8 @@
+###
+# Photos controller
+# Coded by: Andrew McBurney
+###
+
 class PhotosController < ApplicationController
   # basic authentication for all pages except index, show, nature, wildlife and locations (public facing views)
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:index, :show, :nature, :wildlife, :locations]
@@ -79,7 +84,7 @@ class PhotosController < ApplicationController
   # ***************************
   # Private Methods
   # ***************************
-  
+
   private
     def photo_params
       params.require(:photo).permit(:title, :image_type, :image_url, :location, :featured, :order)
